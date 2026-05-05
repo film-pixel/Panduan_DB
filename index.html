@@ -22,6 +22,8 @@
             --nav-height: 50px;
             --accent: #8b5cf6;
             --accent-light: #ede9fe;
+            --orange: #f97316;
+            --orange-light: #fff7ed;
         }
 
         * {
@@ -32,14 +34,14 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--nav-height) + 10px);
+            scroll-padding-top: calc(var(--nav-height) + 20px);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: #f1f5f9;
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.7;
             font-size: 15px;
             -webkit-text-size-adjust: 100%;
             -webkit-tap-highlight-color: transparent;
@@ -95,9 +97,7 @@
             z-index: 1001;
             border-radius: 6px;
         }
-
         .hamburger:active { background: #f1f5f9; }
-
         .hamburger-line {
             width: 22px;
             height: 2.5px;
@@ -106,7 +106,6 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
-
         .hamburger.active .hamburger-line:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
         .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
@@ -120,7 +119,6 @@
             visibility: hidden;
             transition: all 0.3s ease;
         }
-
         .nav-overlay.active { opacity: 1; visibility: visible; }
 
         .nav-menu {
@@ -138,9 +136,7 @@
             box-shadow: -5px 0 25px rgba(0,0,0,0.15);
             padding: 16px 0 20px 0;
         }
-
         .nav-menu.active { right: 0; }
-
         .nav-menu-header {
             padding: 10px 16px 14px 16px;
             border-bottom: 1px solid var(--border);
@@ -152,7 +148,6 @@
             align-items: center;
             gap: 8px;
         }
-
         .nav-menu a {
             display: flex;
             align-items: center;
@@ -164,19 +159,17 @@
             font-size: 0.85em;
             border-left: 3px solid transparent;
         }
-
         .nav-menu a:active { background: #f1f5f9; color: var(--primary); border-left-color: var(--primary); }
 
         /* ========== HEADER ========== */
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #2563eb 100%);
             color: white;
-            padding: 30px 14px;
+            padding: 28px 14px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-
         .hero::after {
             content: '';
             position: absolute;
@@ -186,10 +179,9 @@
             height: 4px;
             background: linear-gradient(90deg, #f59e0b, #ef4444, #8b5cf6, #3b82f6);
         }
-
-        .hero h1 { font-size: 1.5em; font-weight: 800; margin-bottom: 5px; }
-        .hero .subtitle { font-size: 0.95em; opacity: 0.9; margin-bottom: 4px; }
-        .hero .desc { font-size: 0.8em; opacity: 0.75; margin-bottom: 10px; }
+        .hero h1 { font-size: 1.4em; font-weight: 800; margin-bottom: 5px; }
+        .hero .subtitle { font-size: 0.9em; opacity: 0.9; margin-bottom: 4px; }
+        .hero .desc { font-size: 0.78em; opacity: 0.75; margin-bottom: 10px; }
 
         .badge-row {
             display: flex;
@@ -197,7 +189,6 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .badge {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(5px);
@@ -208,17 +199,13 @@
             border: 1px solid rgba(255,255,255,0.2);
             white-space: nowrap;
         }
-
-        .badge-accent {
-            background: rgba(139,92,246,0.4);
-            border-color: rgba(139,92,246,0.6);
-        }
+        .badge-accent { background: rgba(139,92,246,0.4); border-color: rgba(139,92,246,0.6); }
 
         /* ========== CONTAINER ========== */
         .container {
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
-            padding: 14px 10px;
+            padding: 12px 10px;
         }
 
         /* ========== KARTU ========== */
@@ -230,9 +217,8 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
             border: 1px solid var(--border);
         }
-
         .card h2 {
-            font-size: 1.25em;
+            font-size: 1.2em;
             color: var(--primary-dark);
             margin-bottom: 12px;
             padding-bottom: 10px;
@@ -242,48 +228,95 @@
             gap: 8px;
             flex-wrap: wrap;
         }
-
         .card h3 {
             font-size: 1.05em;
             color: var(--dark);
-            margin: 16px 0 8px;
-            padding-left: 4px;
-            border-left: 3px solid var(--accent);
+            margin: 18px 0 8px;
             padding-left: 10px;
+            border-left: 4px solid var(--accent);
         }
-
         .card h4 {
             font-size: 0.92em;
             color: #475569;
-            margin: 12px 0 6px;
+            margin: 14px 0 6px;
+            font-weight: 600;
         }
-
         .icon { font-size: 1.1em; flex-shrink: 0; }
-
         p { margin: 5px 0; font-size: 0.86em; }
-        ul, ol { padding-left: 20px; margin: 6px 0; font-size: 0.85em; }
-        li { margin: 4px 0; }
+        ul, ol { padding-left: 22px; margin: 6px 0; font-size: 0.85em; }
+        li { margin: 5px 0; }
 
-        /* ========== KOTAK INFO/VARIASI ========== */
-        .info-box, .warning-box, .tip-box, .danger-box, .concept-box, .code-box {
+        /* ========== DETAIL STEP ========== */
+        .detail-step {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px;
+            margin: 12px 0;
+            border-left: 4px solid var(--accent);
+        }
+        .detail-step .step-title {
+            font-weight: 700;
+            font-size: 0.9em;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .detail-step .step-title .step-number {
+            background: var(--accent);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            flex-shrink: 0;
+        }
+        .detail-step .step-content {
+            font-size: 0.84em;
+            color: #475569;
+        }
+        .detail-step .step-why {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-top: 10px;
+            font-size: 0.8em;
+        }
+        .detail-step .step-why strong { color: #d97706; }
+        .detail-step .step-analogy {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-top: 8px;
+            font-size: 0.8em;
+        }
+        .detail-step .step-analogy strong { color: #16a34a; }
+
+        /* ========== KOTAK INFO ========== */
+        .info-box, .warning-box, .tip-box, .danger-box, .concept-box {
             padding: 12px 14px;
             border-radius: 7px;
             margin: 12px 0;
             font-size: 0.82em;
         }
-
         .info-box { background: #eff6ff; border-left: 4px solid var(--info); }
         .warning-box { background: #fffbeb; border-left: 4px solid var(--warning); }
         .tip-box { background: #f0fdf4; border-left: 4px solid var(--success); }
         .danger-box { background: #fef2f2; border-left: 4px solid var(--danger); }
         .concept-box { background: #f5f3ff; border-left: 4px solid var(--accent); }
-        .code-box { background: #f8fafc; border-left: 4px solid #94a3b8; }
 
         /* ========== CODE BLOCK ========== */
         .code-block {
             background: var(--code-bg);
             color: var(--code-text);
-            padding: 12px 10px;
+            padding: 14px 12px;
             border-radius: 7px;
             margin: 10px 0;
             overflow-x: auto;
@@ -293,7 +326,6 @@
             line-height: 1.6;
             position: relative;
         }
-
         .code-block .lang-label {
             position: absolute;
             top: 6px;
@@ -309,12 +341,6 @@
             font-weight: 600;
         }
 
-        .code-block .keyword { color: #c792ea; }
-        .code-block .string { color: #c3e88d; }
-        .code-block .number { color: #f78c6c; }
-        .code-block .comment { color: #546e7a; font-style: italic; }
-        .code-block .function { color: #82aaff; }
-
         /* ========== TABEL ========== */
         .table-wrapper {
             overflow-x: auto;
@@ -323,14 +349,12 @@
             border-radius: 7px;
             border: 1px solid var(--border);
         }
-
         table {
             width: 100%;
             min-width: 520px;
             border-collapse: collapse;
             font-size: 0.73em;
         }
-
         table caption {
             font-weight: bold;
             padding: 7px 10px;
@@ -339,7 +363,6 @@
             font-size: 0.88em;
             border-bottom: 2px solid var(--border);
         }
-
         table thead { background: var(--primary); color: white; }
         table th, table td {
             padding: 7px 9px;
@@ -348,48 +371,6 @@
             vertical-align: top;
         }
         table tbody tr:nth-child(even) { background: #f8fafc; }
-        table tbody tr:hover { background: #eff6ff; }
-
-        /* ========== STEP LIST ========== */
-        .step-list {
-            list-style: none;
-            counter-reset: step-counter;
-            padding: 0;
-        }
-
-        .step-list li {
-            counter-increment: step-counter;
-            padding: 10px 10px 10px 40px;
-            margin: 7px 0;
-            background: #f8fafc;
-            border-radius: 7px;
-            position: relative;
-            border: 1px solid var(--border);
-            font-size: 0.82em;
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .step-list li::before {
-            content: counter(step-counter);
-            position: absolute;
-            left: 7px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 26px;
-            height: 26px;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.75em;
-            flex-shrink: 0;
-        }
 
         /* ========== DIAGRAM ========== */
         .diagram {
@@ -400,13 +381,11 @@
             margin: 10px 0;
             text-align: center;
             font-family: 'Courier New', monospace;
-            font-size: 0.6em;
+            font-size: 0.58em;
             line-height: 1.6;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
-
-        .flow-arrow { color: var(--accent); font-weight: bold; font-size: 1.2em; }
 
         /* ========== TAG ========== */
         .tag {
@@ -423,19 +402,9 @@
         .tag-success { background: #dcfce7; color: #16a34a; }
         .tag-warning { background: #fef3c7; color: #d97706; }
         .tag-accent { background: #ede9fe; color: #7c3aed; }
-        .tag-gray { background: #e2e8f0; color: #475569; }
 
         .highlight {
             background: linear-gradient(120deg, #fef08a 0%, #fef08a 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 32%;
-            background-position: 0 92%;
-            padding: 1px 3px;
-            font-weight: 600;
-        }
-
-        .highlight-accent {
-            background: linear-gradient(120deg, #ddd6fe 0%, #ddd6fe 100%);
             background-repeat: no-repeat;
             background-size: 100% 32%;
             background-position: 0 92%;
@@ -461,7 +430,6 @@
             font-weight: 500;
         }
 
-        /* ========== PROGRESS BAR ========== */
         .progress-bar {
             background: #e2e8f0;
             border-radius: 10px;
@@ -476,7 +444,6 @@
             transition: width 0.5s;
         }
 
-        /* ========== FOOTER ========== */
         footer {
             background: var(--dark);
             color: #94a3b8;
@@ -490,31 +457,27 @@
         /* ========== RESPONSIVE ========== */
         @media (min-width: 600px) {
             body { font-size: 15px; }
-            .hero { padding: 36px 20px; }
-            .hero h1 { font-size: 2em; }
-            .hero .subtitle { font-size: 1.1em; }
-            .badge { font-size: 0.78em; padding: 6px 12px; }
-            .container { padding: 18px 14px; }
+            .hero { padding: 34px 20px; }
+            .hero h1 { font-size: 1.9em; }
+            .badge { font-size: 0.76em; }
+            .container { padding: 16px 14px; }
             .card { padding: 22px 18px; border-radius: 12px; margin-bottom: 20px; }
-            .card h2 { font-size: 1.5em; }
-            .card h3 { font-size: 1.15em; }
+            .card h2 { font-size: 1.45em; }
+            .card h3 { font-size: 1.12em; }
             p, ul, ol { font-size: 0.9em; }
-            .code-block { font-size: 0.76em; padding: 16px 14px; }
-            table { font-size: 0.8em; }
-            .step-list li { font-size: 0.88em; padding: 12px 12px 12px 46px; }
-            .step-list li::before { width: 30px; height: 30px; font-size: 0.85em; left: 8px; }
-            .diagram { font-size: 0.68em; padding: 14px; }
-            .nav-menu { width: 300px; }
-            .nav-menu a { font-size: 0.9em; padding: 13px 18px; }
+            .code-block { font-size: 0.75em; padding: 16px 14px; }
+            table { font-size: 0.78em; }
+            .diagram { font-size: 0.66em; }
+            .detail-step .step-content { font-size: 0.88em; }
+            .nav-menu a { font-size: 0.9em; }
         }
 
         @media (min-width: 900px) {
-            .container { padding: 22px 18px; }
-            .card { padding: 26px 22px; border-radius: 14px; margin-bottom: 24px; }
-            .card h2 { font-size: 1.7em; }
-            .code-block { font-size: 0.82em; padding: 18px 16px; }
-            table { font-size: 0.85em; }
-            .diagram { font-size: 0.76em; }
+            .container { padding: 20px 18px; }
+            .card { padding: 26px 22px; border-radius: 14px; }
+            .card h2 { font-size: 1.65em; }
+            .code-block { font-size: 0.82em; }
+            table { font-size: 0.84em; }
         }
 
         @media (min-width: 1024px) {
@@ -528,19 +491,21 @@
             .nav-menu-header { display: none; }
             .nav-menu a {
                 border-left: none; border-bottom: 3px solid transparent;
-                padding: 0 9px; font-size: 0.75em; height: var(--nav-height); white-space: nowrap;
+                padding: 0 8px; font-size: 0.72em; height: var(--nav-height); white-space: nowrap;
             }
             .nav-menu a:active { border-bottom-color: var(--accent); border-left-color: transparent; }
             .nav-brand { font-size: 0.9em; }
-            .navbar-container { justify-content: space-between; }
+        }
+
+        @media (min-width: 1200px) {
+            .nav-menu a { font-size: 0.78em; padding: 0 10px; }
         }
 
         @media print {
             .navbar, .hamburger, .nav-overlay, .nav-menu { display: none; }
             body { padding-top: 0; background: white; font-size: 11px; }
-            .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; margin-bottom: 10px; }
-            .code-block { background: #f5f5f5; color: #333; border: 1px solid #ddd; }
-            .hero { background: #2563eb !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+            .code-block { background: #f5f5f5; color: #333; }
         }
     </style>
 </head>
@@ -549,9 +514,7 @@
     <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <a href="#home" class="nav-brand">
-                <span class="brand-icon">🗄️</span> Panduan DB - PPLG
-            </a>
+            <a href="#home" class="nav-brand"><span class="brand-icon">🗄️</span> Modul Database PPLG</a>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -559,975 +522,1042 @@
             </button>
         </div>
     </nav>
-
     <div class="nav-overlay" id="navOverlay"></div>
-
     <div class="nav-menu" id="navMenu">
-        <div class="nav-menu-header">📑 Daftar Materi Lengkap</div>
-        <a href="#pendahuluan"><span class="nav-icon">📖</span> 1. Pendahuluan & Konsep</a>
-        <a href="#arsitektur"><span class="nav-icon">🏛️</span> 2. Arsitektur Database</a>
-        <a href="#rancangan"><span class="nav-icon">📝</span> 3. Rancangan Database</a>
-        <a href="#tipe-data"><span class="nav-icon">🔢</span> 4. Tipe Data Detail</a>
-        <a href="#normalisasi"><span class="nav-icon">📐</span> 5. Normalisasi</a>
-        <a href="#implementasi"><span class="nav-icon">⚡</span> 6. Implementasi CRUD</a>
-        <a href="#relasi-lanjut"><span class="nav-icon">🔗</span> 7. Relasi & Join</a>
-        <a href="#optimasi"><span class="nav-icon">🚀</span> 8. Optimasi & Index</a>
-        <a href="#studi-kasus"><span class="nav-icon">🎯</span> 9. Studi Kasus PPLG</a>
-        <a href="#best-practice"><span class="nav-icon">💡</span> 10. Best Practice</a>
+        <div class="nav-menu-header">📑 Daftar Materi</div>
+        <a href="#pengenalan"><span class="nav-icon">📖</span> 1. Pengenalan Database</a>
+        <a href="#xampp"><span class="nav-icon">⚙️</span> 2. Instalasi XAMPP</a>
+        <a href="#phpmyadmin"><span class="nav-icon">🖥️</span> 3. Mengenal phpMyAdmin</a>
+        <a href="#rancangan"><span class="nav-icon">📝</span> 4. Rancangan Database</a>
+        <a href="#tipe-data"><span class="nav-icon">🔢</span> 5. Tipe Data</a>
+        <a href="#normalisasi"><span class="nav-icon">📐</span> 6. Normalisasi</a>
+        <a href="#buat-db"><span class="nav-icon">🏗️</span> 7. Membuat Database</a>
+        <a href="#buat-tabel"><span class="nav-icon">📋</span> 8. Membuat Tabel</a>
+        <a href="#isi-data"><span class="nav-icon">✏️</span> 9. Mengisi Data (INSERT)</a>
+        <a href="#baca-data"><span class="nav-icon">👀</span> 10. Membaca Data (SELECT)</a>
+        <a href="#update-data"><span class="nav-icon">🔄</span> 11. Mengubah Data (UPDATE)</a>
+        <a href="#hapus-data"><span class="nav-icon">🗑️</span> 12. Menghapus Data (DELETE)</a>
+        <a href="#relasi"><span class="nav-icon">🔗</span> 13. Relasi & Foreign Key</a>
+        <a href="#join"><span class="nav-icon">🔀</span> 14. JOIN Table</a>
+        <a href="#export-import"><span class="nav-icon">📦</span> 15. Ekspor & Impor</a>
+        <a href="#tips"><span class="nav-icon">💡</span> 16. Tips & Best Practice</a>
     </div>
 
     <!-- ==================== HEADER ==================== -->
     <header class="hero" id="home">
         <h1>🗄️ Panduan Lengkap Database MySQL & phpMyAdmin</h1>
-        <p class="subtitle">Modul Pembelajaran Basis Data untuk SMK Jurusan PPLG</p>
-        <p class="desc">Pengembangan Perangkat Lunak dan Gim | Kurikulum Merdeka</p>
+        <p class="subtitle">Dilengkapi Penjelasan "Mengapa" di Setiap Langkah</p>
+        <p class="desc">Modul Praktikum Basis Data SMK Jurusan PPLG / RPL</p>
         <div class="badge-row">
-            <span class="badge">🔰 Pemula - Mahir</span>
-            <span class="badge badge-accent">💻 PPLG RPL</span>
-            <span class="badge">📚 Step by Step</span>
-            <span class="badge">🇮🇩 Bahasa Indonesia</span>
+            <span class="badge">🔰 Step-by-Step Detail</span>
+            <span class="badge badge-accent">💻 PPLG/RPL</span>
+            <span class="badge">📖 Ada Penjelasan</span>
+            <span class="badge">🇮🇩 Indonesia</span>
         </div>
     </header>
 
     <main class="container">
 
-        <!-- ==================== 1. PENDAHULUAN ==================== -->
-        <section id="pendahuluan" class="card">
-            <h2><span class="icon">📖</span> 1. Pendahuluan & Konsep Dasar Database</h2>
-
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Memahami konsep database, DBMS, dan peran database dalam pengembangan perangkat lunak.
-            </div>
+        <!-- ==================== 1. PENGENALAN ==================== -->
+        <section id="pengenalan" class="card">
+            <h2><span class="icon">📖</span> Bagian 1: Pengenalan Database</h2>
 
             <h3>1.1 Apa Itu Database?</h3>
-            <p><strong>Database (Basis Data)</strong> adalah kumpulan data yang terorganisir dan disimpan secara sistematis dalam komputer sehingga dapat diakses, dikelola, dan diperbarui dengan mudah. Dalam konteks PPLG, database adalah <span class="highlight">komponen backend</span> yang menyimpan semua data aplikasi.</p>
+            <p><strong>Database</strong> (Basis Data) adalah kumpulan data yang disimpan secara terstruktur dan sistematis di komputer. Database memungkinkan kita menyimpan, mencari, mengubah, dan menghapus data dengan mudah.</p>
 
-            <div class="info-box">
-                <strong>🧠 Analogi untuk Programmer:</strong><br>
-                • <strong>Database</strong> = Gudang data aplikasi (seperti array multidimensi yang persisten)<br>
-                • <strong>Tabel</strong> = Class/Entity (seperti struct di C/C++ atau class di Java)<br>
-                • <strong>Record/Row</strong> = Object/Instance (satu objek dari class)<br>
-                • <strong>Kolom/Field</strong> = Property/Attribute (variabel dalam class)<br>
-                • <strong>Primary Key</strong> = ID unik (seperti memory address untuk identifikasi)
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">💡</span> Analogi Sederhana</div>
+                <div class="step-analogy">
+                    <strong>🧠 Bayangkan ini:</strong><br>
+                    • <strong>Database</strong> = Sebuah <u>lemari arsip besar</u> di kantor<br>
+                    • <strong>Tabel</strong> = Satu <u>laci</u> dalam lemari itu (misal: laci surat, laci faktur)<br>
+                    • <strong>Kolom (Field)</strong> = <u>Kolom isian</u> di formulir (Nama, Tanggal, Jumlah)<br>
+                    • <strong>Baris (Record)</strong> = Satu <u>formulir yang sudah diisi</u> lengkap<br>
+                    • <strong>Primary Key</strong> = <u>Nomor urut unik</u> di setiap formulir
+                </div>
+                <div class="step-why">
+                    <strong>🎯 Kenapa harus pakai Database? Kenapa tidak Excel saja?</strong><br>
+                    1. <strong>Kapasitas:</strong> Excel mentok di ~1 juta baris, MySQL bisa miliaran baris<br>
+                    2. <strong>Akses bersamaan:</strong> Database bisa diakses banyak user sekaligus tanpa konflik<br>
+                    3. <strong>Keamanan:</strong> Database punya sistem user & password, Excel hanya password file<br>
+                    4. <strong>Validasi:</strong> Database bisa menolak data yang salah format secara otomatis<br>
+                    5. <strong>Relasi:</strong> Database bisa menghubungkan data antar tabel dengan mudah
+                </div>
             </div>
 
-            <h3>1.2 DBMS (Database Management System)</h3>
-            <p><strong>DBMS</strong> adalah software yang mengelola database. MySQL, PostgreSQL, SQLite, Oracle, SQL Server adalah contoh DBMS. Untuk PPLG, kita fokus pada <strong>MySQL/MariaDB</strong> karena:</p>
-            <ul>
-                <li>✅ <strong>Open Source</strong> - Gratis digunakan</li>
-                <li>✅ <strong>Paling populer</strong> di industri web (70%+ website pakai MySQL)</li>
-                <li>✅ <strong>Integrasi sempurna</strong> dengan PHP, Node.js, Python, Java</li>
-                <li>✅ <strong>Standar industri</strong> untuk LAMP/LEMP stack</li>
-                <li>✅ <strong>Dokumentasi lengkap</strong> dan komunitas besar</li>
-            </ul>
-
-            <h3>1.3 phpMyAdmin dalam Ekosistem Development</h3>
-            <div class="concept-box">
-                <strong>🔧 Posisi phpMyAdmin dalam Stack:</strong><br>
-                <code>Frontend (HTML/CSS/JS/Vue/React) → Backend (PHP/Node.js) → phpMyAdmin → MySQL Database</code><br><br>
-                phpMyAdmin adalah <strong>GUI client</strong> untuk MySQL. Dalam development, kamu bisa pakai:<br>
-                • <strong>phpMyAdmin</strong> - GUI web, cocok untuk development & admin<br>
-                • <strong>MySQL Workbench</strong> - GUI desktop, fitur lebih lengkap<br>
-                • <strong>CLI (Command Line)</strong> - Terminal, untuk production/server<br>
-                • <strong>Library ORM</strong> - Prisma, Sequelize, Eloquent (diakses dari kode)
-            </div>
-
-            <h3>1.4 Jenis-Jenis Database</h3>
+            <h3>1.2 Komponen Utama Database</h3>
             <div class="table-wrapper">
                 <table>
                     <thead>
-                        <tr><th>Jenis</th><th>Contoh</th><th>Struktur Data</th><th>Use Case</th></tr>
+                        <tr><th>Komponen</th><th>Penjelasan Sederhana</th><th>Contoh Nyata</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>Relational (SQL)</strong></td>
-                            <td>MySQL, PostgreSQL, SQLite</td>
-                            <td>Tabel dengan relasi</td>
-                            <td>⭐ Aplikasi bisnis, e-commerce, sistem informasi</td>
-                        </tr>
-                        <tr>
-                            <td><strong>NoSQL - Document</strong></td>
-                            <td>MongoDB, Firestore</td>
-                            <td>JSON Document</td>
-                            <td>Realtime app, content management</td>
-                        </tr>
-                        <tr>
-                            <td><strong>NoSQL - Key-Value</strong></td>
-                            <td>Redis, Memcached</td>
-                            <td>Key → Value</td>
-                            <td>Cache, session storage</td>
-                        </tr>
-                        <tr>
-                            <td><strong>NoSQL - Graph</strong></td>
-                            <td>Neo4j</td>
-                            <td>Nodes & Edges</td>
-                            <td>Social network, rekomendasi</td>
-                        </tr>
+                        <tr><td><strong>Entitas</strong></td><td>Objek/benda yang datanya mau disimpan</td><td>Siswa, Buku, Mobil, Produk</td></tr>
+                        <tr><td><strong>Atribut</strong></td><td>Ciri-ciri dari entitas</td><td>Nama_siswa, Judul_buku, Harga</td></tr>
+                        <tr><td><strong>Primary Key</strong></td><td>ID unik, seperti NIK di KTP</td><td>NIS, Kode_barang, ID_pelanggan</td></tr>
+                        <tr><td><strong>Foreign Key</strong></td><td>Penghubung ke tabel lain</td><td>ID_buku di tabel Peminjaman</td></tr>
+                        <tr><td><strong>Relasi</strong></td><td>Hubungan antar entitas</td><td>Siswa MEMINJAM Buku</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p style="color:#64748b; font-size:0.8em;">💡 <strong>Untuk PPLG:</strong> Fokus kuasai Relational Database dulu, karena ini fundamental yang akan dipakai di sebagian besar proyek.</p>
 
-            <div class="progress-bar"><div class="progress-fill" style="width: 10%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 10%</p>
+            <div class="concept-box">
+                <strong>📝 Istilah Penting untuk PPLG:</strong><br>
+                • <strong>DBMS</strong> = Software pengelola database (MySQL, PostgreSQL, Oracle)<br>
+                • <strong>SQL</strong> = Bahasa untuk berkomunikasi dengan database<br>
+                • <strong>CRUD</strong> = Create, Read, Update, Delete (4 operasi dasar)<br>
+                • <strong>Schema</strong> = Struktur/desain database (tabel, kolom, relasi)
+            </div>
         </section>
 
-        <!-- ==================== 2. ARSITEKTUR DATABASE ==================== -->
-        <section id="arsitektur" class="card">
-            <h2><span class="icon">🏛️</span> 2. Arsitektur & Komponen Database MySQL</h2>
+        <!-- ==================== 2. INSTALASI XAMPP ==================== -->
+        <section id="xampp" class="card">
+            <h2><span class="icon">⚙️</span> Bagian 2: Instalasi XAMPP</h2>
 
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Memahami arsitektur MySQL, storage engine, dan bagaimana data disimpan.
+            <h3>2.1 Apa itu XAMPP?</h3>
+            <p><strong>XAMPP</strong> adalah paket software yang berisi: <strong>Apache</strong> (web server), <strong>MySQL/MariaDB</strong> (database), <strong>PHP</strong> (bahasa pemrograman), dan <strong>phpMyAdmin</strong> (alat kelola database). Semua dalam satu instalasi!</p>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Download XAMPP</div>
+                <div class="step-content">
+                    <ol>
+                        <li>Buka browser, kunjungi: <strong>https://www.apachefriends.org</strong></li>
+                        <li>Pilih versi sesuai OS kamu (Windows, Linux, Mac)</li>
+                        <li>Klik tombol <strong>Download</strong> (pilih yang versi PHP 8.x terbaru)</li>
+                        <li>Tunggu download selesai (±150 MB)</li>
+                    </ol>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa harus XAMPP? Kenapa tidak install MySQL sendiri?</strong><br>
+                    XAMPP sudah menyatukan Apache + MySQL + PHP + phpMyAdmin. Kalau install sendiri-sendiri, kamu harus konfigurasi manual yang rumit. XAMPP sudah di-set supaya semua komponen langsung bisa bekerja sama.
+                </div>
             </div>
 
-            <h3>2.1 Arsitektur MySQL</h3>
-            <div class="diagram">
-                ┌──────────────────────────────────────────┐<br>
-                │ CLIENT LAYER │<br>
-                │ (phpMyAdmin, MySQL CLI, Aplikasi PHP) │<br>
-                └────────────────┬─────────────────────────┘<br>
-                │ SQL Query │<br>
-                ▼<br>
-                ┌──────────────────────────────────────────┐<br>
-                │ QUERY PROCESSING LAYER │<br>
-                │ • Parser (memeriksa sintaks SQL) │<br>
-                │ • Optimizer (mencari cara tercepat) │<br>
-                │ • Executor (menjalankan query) │<br>
-                │ • Query Cache (menyimpan hasil query) │<br>
-                └────────────────┬─────────────────────────┘<br>
-                │ │<br>
-                ▼<br>
-                ┌──────────────────────────────────────────┐<br>
-                │ STORAGE ENGINE LAYER │<br>
-                │ • InnoDB (Default, support transaksi) │<br>
-                │ • MyISAM (Cepat untuk read-only) │<br>
-                │ • Memory (Data di RAM, super cepat) │<br>
-                └────────────────┬─────────────────────────┘<br>
-                │ │<br>
-                ▼<br>
-                ┌──────────────────────────────────────────┐<br>
-                │ PHYSICAL STORAGE (Harddisk/SSD) │<br>
-                │ File .frm (struktur), .ibd (data+index) │<br>
-                └──────────────────────────────────────────┘
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Install XAMPP</div>
+                <div class="step-content">
+                    <ol>
+                        <li>Double-click file installer yang sudah didownload</li>
+                        <li>Klik <strong>Next</strong> terus sampai selesai (jangan ubah setting default)</li>
+                        <li>Pilih folder instalasi (default: <code>C:\xampp</code>)</li>
+                        <li>Tunggu proses instalasi selesai</li>
+                    </ol>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa install di C:\xampp? Tidak boleh di tempat lain?</strong><br>
+                    Boleh di mana saja, tapi hindari folder yang ada spasinya (seperti "Program Files") karena bisa menyebabkan error di beberapa konfigurasi. Path pendek seperti C:\xampp lebih aman.
+                </div>
             </div>
 
-            <h3>2.2 Storage Engine: InnoDB vs MyISAM</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>Fitur</th><th>InnoDB ⭐</th><th>MyISAM</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Transaksi (ACID)</td><td>✅ Support</td><td>❌ Tidak support</td></tr>
-                        <tr><td>Foreign Key</td><td>✅ Support</td><td>❌ Tidak support</td></tr>
-                        <tr><td>Row-level Locking</td><td>✅ Ya</td><td>❌ Table-level saja</td></tr>
-                        <tr><td>Kecepatan INSERT</td><td>Sedang</td><td>Cepat</td></tr>
-                        <tr><td>Kecepatan SELECT</td><td>Cepat (dengan index)</td><td>Sangat cepat</td></tr>
-                        <tr><td>Recovery</td><td>Otomatis (crash-safe)</td><td>Manual (rentan korup)</td></tr>
-                        <tr><td>Full-text Search</td><td>✅ (MySQL 5.6+)</td><td>✅</td></tr>
-                        <tr><td>Use Case</td><td>⭐ Aplikasi transaksional (e-commerce, banking)</td><td>Logging, data warehouse, read-heavy</td></tr>
-                    </tbody>
-                </table>
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> Menjalankan Apache & MySQL</div>
+                <div class="step-content">
+                    <ol>
+                        <li>Buka <strong>XAMPP Control Panel</strong> dari desktop/start menu</li>
+                        <li>Klik tombol <span class="tag tag-success">Start</span> di baris <strong>Apache</strong></li>
+                        <li>Klik tombol <span class="tag tag-success">Start</span> di baris <strong>MySQL</strong></li>
+                        <li>Tunggu sampai keduanya berubah menjadi tulisan <strong>Running</strong> berwarna hijau</li>
+                    </ol>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apa fungsi Apache dan MySQL?</strong><br>
+                    • <strong>Apache</strong> = Web server yang "melayani" permintaan dari browser. Tanpa Apache, kamu tidak bisa membuka phpMyAdmin<br>
+                    • <strong>MySQL</strong> = Database server yang menyimpan data. Ini "otak" penyimpanannya<br>
+                    Keduanya harus menyala (Running) agar phpMyAdmin bisa diakses.
+                </div>
+                <div class="step-analogy">
+                    <strong>🧠 Analogi:</strong> Apache = Pelayan restoran (menerima pesanan), MySQL = Dapur (tempat masak/menyimpan bahan)
+                </div>
             </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">4</span> Membuka phpMyAdmin</div>
+                <div class="step-content">
+                    <ol>
+                        <li>Buka web browser (Chrome/Firefox/Edge)</li>
+                        <li>Di address bar, ketik: <strong>http://localhost/phpmyadmin</strong></li>
+                        <li>Tekan Enter</li>
+                        <li>Halaman phpMyAdmin akan muncul!</li>
+                    </ol>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apa artinya "localhost"?</strong><br>
+                    <strong>localhost</strong> artinya "komputer ini sendiri". Jadi kamu mengakses server yang berjalan di komputermu sendiri, bukan di internet. Tidak perlu koneksi internet untuk mengakses phpMyAdmin!
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Masalah yang Sering Terjadi & Solusinya:</strong><br>
+                • <strong>Apache tidak mau start?</strong> → Cek apakah ada Skype, Zoom, atau IIS yang pakai port 80. Tutup aplikasi itu dulu<br>
+                • <strong>MySQL tidak mau start?</strong> → Cek port 3306. Bisa juga hapus file <code>ibdata1</code> di folder <code>C:\xampp\mysql\data</code><br>
+                • <strong>"Access Denied" saat buka phpMyAdmin?</strong> → Username: <code>root</code>, Password: <em>(kosongkan)</em>
+            </div>
+        </section>
+
+        <!-- ==================== 3. MENGENAL PHPMYADMIN ==================== -->
+        <section id="phpmyadmin" class="card">
+            <h2><span class="icon">🖥️</span> Bagian 3: Mengenal Tampilan phpMyAdmin</h2>
+
+            <h3>3.1 Bagian-Bagian Utama</h3>
+            <p>Saat pertama kali membuka phpMyAdmin, kamu akan melihat tampilan seperti ini:</p>
+
+            <div class="info-box">
+                <strong>🖥️ Layout phpMyAdmin:</strong><br>
+                1. <strong>Sidebar Kiri (Biru)</strong> → Daftar semua database yang ada<br>
+                2. <strong>Tab Menu Atas</strong> → Database, SQL, Status, User accounts, Export, Import<br>
+                3. <strong>Area Tengah</strong> → Tempat utama bekerja (isi tabel, lihat struktur, dll)<br>
+                4. <strong>Breadcrumb</strong> → Navigasi posisi (contoh: Server > db_perpustakaan > tb_buku)<br>
+                5. <strong>Icon Bar</strong> → Browse, Structure, Search, Insert, Empty, Drop
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">📌</span> Penjelasan Setiap Menu</div>
+                <div class="step-content">
+                    <strong>Tab Menu Atas:</strong><br>
+                    • <strong>Database</strong> → Membuat database baru, melihat daftar database<br>
+                    • <strong>SQL</strong> → Mengetik perintah SQL langsung (cara pro!)<br>
+                    • <strong>Status</strong> → Informasi server MySQL (versi, uptime, traffic)<br>
+                    • <strong>User accounts</strong> → Mengelola user dan password database<br>
+                    • <strong>Export</strong> → Backup database ke file .sql<br>
+                    • <strong>Import</strong> → Restore database dari file .sql<br><br>
+                    <strong>Icon Bar (di dalam tabel):</strong><br>
+                    • <strong>Browse</strong> 👁️ → Melihat isi data tabel<br>
+                    • <strong>Structure</strong> 🏗️ → Melihat dan mengubah struktur tabel<br>
+                    • <strong>Search</strong> 🔍 → Mencari data spesifik<br>
+                    • <strong>Insert</strong> ➕ → Menambah data baru<br>
+                    • <strong>Empty</strong> 🗑️ → Mengosongkan tabel (hapus semua data)<br>
+                    • <strong>Drop</strong> ❌ → Menghapus tabel beserta seluruh data
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa belajar phpMyAdmin? Kan ada cara lain?</strong><br>
+                    • Dengan phpMyAdmin, kamu bisa <strong>visual</strong> melihat data, tidak perlu hafal semua perintah SQL<br>
+                    • phpMyAdmin <strong>otomatis</strong> menampilkan struktur tabel, relasi, dan index<br>
+                    • Cocok untuk <strong>development</strong> dan <strong>troubleshooting</strong> cepat<br>
+                    • Tapi untuk production, developer profesional lebih sering pakai CLI atau MySQL Workbench
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4. RANCANGAN DATABASE ==================== -->
+        <section id="rancangan" class="card">
+            <h2><span class="icon">📝</span> Bagian 4: Merancang Database</h2>
 
             <div class="danger-box">
-                <strong>🚨 PENTING UNTUK PPLG!</strong> Selalu gunakan <strong>ENGINE=InnoDB</strong> untuk aplikasi produksi! InnoDB mendukung transaksi (COMMIT/ROLLBACK) dan foreign key yang sangat penting untuk integritas data.
+                <strong>🚨 JANGAN PERNAH membuat database tanpa rancangan!</strong> Seperti membangun rumah tanpa denah. Akibatnya fatal: data berantakan, duplikat di mana-mana, sulit dikembangkan.
             </div>
 
-            <h3>2.3 Konsep ACID dalam Transaksi</h3>
-            <div class="concept-box">
-                <strong>🔐 ACID adalah 4 properti yang menjamin transaksi database aman:</strong><br>
-                • <strong>Atomicity (Atomik)</strong> - Semua operasi dalam transaksi sukses, atau semua gagal (all-or-nothing)<br>
-                • <strong>Consistency (Konsisten)</strong> - Data tetap valid sesuai aturan sebelum & sesudah transaksi<br>
-                • <strong>Isolation (Terisolasi)</strong> - Transaksi berjalan seolah hanya sendiri, tidak terganggu transaksi lain<br>
-                • <strong>Durability (Durable)</strong> - Data yang sudah di-commit tetap tersimpan meskipun server crash<br><br>
-                <strong>Contoh Kasus Transfer Uang:</strong><br>
-                <code>UPDATE rekening SET saldo = saldo - 50000 WHERE id = 1;</code><br>
-                <code>UPDATE rekening SET saldo = saldo + 50000 WHERE id = 2;</code><br>
-                Kedua query harus sukses atau keduanya gagal. Tidak boleh hanya satu yang sukses!
+            <h3>4.1 Tahapan Merancang Database</h3>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Tentukan Tujuan</div>
+                <div class="step-content">
+                    Tentukan dulu: <strong>Database ini untuk aplikasi apa?</strong> Siapa yang akan pakai? Data apa yang akan dikelola?<br>
+                    Contoh: "Saya mau buat sistem perpustakaan sekolah untuk mengelola buku, anggota, dan peminjaman."
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa harus tentukan tujuan dulu?</strong><br>
+                    Tanpa tujuan jelas, kamu akan bingung tabel apa saja yang dibutuhkan. Bisa-bisa kamu membuat tabel yang tidak penting, atau malah kurang tabel yang penting.
+                </div>
             </div>
 
-            <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 20%</p>
-        </section>
-
-        <!-- ==================== 3. RANCANGAN DATABASE ==================== -->
-        <section id="rancangan" class="card">
-            <h2><span class="icon">📝</span> 3. Perancangan Database Sistem</h2>
-
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Mampu merancang database dari analisis kebutuhan sampai implementasi fisik.
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Identifikasi Entitas</div>
+                <div class="step-content">
+                    Cari tahu "<strong>benda</strong>" atau "<strong>konsep</strong>" apa saja yang datanya perlu disimpan.<br>
+                    Dari contoh perpustakaan: <strong>Buku</strong>, <strong>Anggota</strong>, <strong>Peminjaman</strong>, <strong>Kategori</strong>.<br>
+                    Setiap entitas ini nantinya akan menjadi <strong>satu tabel</strong>.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Gimana cara mengidentifikasi entitas?</strong><br>
+                    Lihat kata benda dalam deskripsi sistem. Kalau ada kata "menyimpan data X" atau "mencatat Y", maka X dan Y adalah entitas.
+                </div>
             </div>
 
-            <h3>3.1 Metodologi Perancangan Database</h3>
-            <div class="diagram">
-                <strong>TAHAPAN PERANCANGAN DATABASE:</strong><br><br>
-                ANALISIS KEBUTUHAN<br>
-                │ (Wawancara user, analisis dokumen, observasi)<br>
-                ▼<br>
-                PERANCANGAN KONSEPTUAL<br>
-                │ (Entity Relationship Diagram / ERD)<br>
-                ▼<br>
-                PERANCANGAN LOGIKAL<br>
-                │ (Mapping ERD ke tabel, normalisasi)<br>
-                ▼<br>
-                PERANCANGAN FISIKAL<br>
-                │ (Implementasi di DBMS, tuning, index)<br>
-                ▼<br>
-                IMPLEMENTASI & MAINTENANCE
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> Tentukan Atribut (Kolom)</div>
+                <div class="step-content">
+                    Untuk setiap entitas, tentukan data spesifik apa yang perlu disimpan.<br>
+                    Contoh entitas <strong>Buku</strong>: judul, pengarang, penerbit, tahun_terbit, ISBN, stok.<br>
+                    Setiap atribut ini akan menjadi <strong>satu kolom</strong> dalam tabel.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Berapa banyak kolom yang ideal?</strong><br>
+                    Tidak ada batasan pasti. Tapi prinsipnya: simpan hanya data yang <strong>dibutuhkan sistem</strong>. Jangan menyimpan data "siapa tahu nanti perlu" — itu boros dan bikin tabel gemuk.
+                </div>
             </div>
 
-            <h3>3.2 Entity Relationship Diagram (ERD)</h3>
-            <p><strong>ERD</strong> adalah diagram yang menggambarkan entitas, atribut, dan relasi dalam database. Ini adalah <span class="highlight-accent">skill wajib PPLG</span> sebelum coding!</p>
-
-            <h4>Komponen ERD:</h4>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>Simbol</th><th>Nama</th><th>Fungsi</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>📦 Persegi Panjang</td><td><strong>Entity</strong></td><td>Objek/data yang disimpan (Siswa, Buku)</td></tr>
-                        <tr><td>🔵 Oval</td><td><strong>Attribute</strong></td><td>Properti entity (Nama, Judul)</td></tr>
-                        <tr><td>💎 Belah Ketupat</td><td><strong>Relationship</strong></td><td>Hubungan antar entity (Meminjam)</td></tr>
-                        <tr><td>━━ Garis</td><td><strong>Connector</strong></td><td>Menghubungkan entity dengan relasi</td></tr>
-                        <tr><td>1, M, N</td><td><strong>Cardinality</strong></td><td>Derajat relasi (1:1, 1:N, M:N)</td></tr>
-                    </tbody>
-                </table>
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">4</span> Tentukan Primary Key</div>
+                <div class="step-content">
+                    Pilih satu kolom yang <strong>unik</strong> untuk setiap record. Biasanya berupa <code>id_[entitas]</code> dengan tipe INT dan AUTO_INCREMENT.<br>
+                    Contoh: <code>id_buku</code>, <code>id_anggota</code>, <code>id_peminjaman</code>.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa harus ada Primary Key?</strong><br>
+                    Primary key menjamin setiap baris data punya identitas unik. Tanpa primary key, kamu tidak bisa membedakan dua data yang isinya sama persis. Selain itu, primary key diperlukan untuk membuat relasi antar tabel.
+                </div>
             </div>
 
-            <h3>3.3 Studi Kasus Lengkap: Sistem Perpustakaan Digital</h3>
-            <p>Kita akan merancang <strong>Sistem Informasi Perpustakaan</strong> yang bisa dipakai untuk tugas akhir PPLG. Spesifikasi lengkap:</p>
-
-            <div class="info-box">
-                <strong>📋 Requirement System:</strong><br>
-                1. Mengelola data buku (judul, ISBN, kategori, penerbit, stok)<br>
-                2. Mengelola data anggota (NIS, nama, kelas, jurusan, kontak)<br>
-                3. Transaksi peminjaman dan pengembalian buku<br>
-                4. Satu anggota bisa pinjam maksimal 3 buku bersamaan<br>
-                5. Durasi peminjaman 7 hari, denda Rp 1.000/hari jika terlambat<br>
-                6. Pencarian buku berdasarkan judul, pengarang, atau kategori<br>
-                7. Laporan buku terpopuler dan anggota teraktif
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">5</span> Tentukan Relasi</div>
+                <div class="step-content">
+                    Tentukan bagaimana hubungan antar entitas:<br>
+                    • <strong>One-to-One (1:1)</strong>: 1 Siswa punya 1 NIS<br>
+                    • <strong>One-to-Many (1:N)</strong>: 1 Anggota bisa pinjam BANYAK buku<br>
+                    • <strong>Many-to-Many (N:N)</strong>: 1 Buku bisa dipinjam BANYAK anggota, butuh tabel bantuan
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa relasi penting?</strong><br>
+                    Relasi menghubungkan data. Misal kamu ingin tahu "buku apa yang sedang dipinjam Budi". Tanpa relasi, kamu harus menyimpan semua data di satu tabel (boros dan kacau). Dengan relasi, cukup hubungkan tabel Anggota dan Buku lewat tabel Peminjaman.
+                </div>
             </div>
 
-            <h4>ERD Sistem Perpustakaan:</h4>
-            <div class="diagram">
-                ┌──────────────┐ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ┌──────────────┐<br>
-                │ BUKU │ │ ANGGOTA │<br>
-                ├──────────────┤ ├──────────────┤<br>
-                │• id_buku │ │• id_anggota │<br>
-                │ kode_buku │ │ nis │<br>
-                │ judul │ │ nama_lengkap │<br>
-                │ pengarang │ │ kelas │<br>
-                │ penerbit │ │ jurusan │<br>
-                │ isbn │ │ no_hp │<br>
-                │ id_kategori FK│ │ email │<br>
-                │ stok │ │ alamat │<br>
-                │ tahun_terbit │ │ status │<br>
-                └──────┬───────┘ └──────┬───────┘<br>
-                │ 1 │ 1<br>
-                │ │<br>
-                ┌──────┴──────────────────┴───────┐<br>
-                │ ◇ MEMINJAM ◇ │<br>
-                │ (Relationship N:M) │<br>
-                └──────┬──────────────────┬───────┘<br>
-                │ M │ M<br>
-                │ │<br>
-                ┌──────┴───────┐ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ┌──────┴──────────────────┐<br>
-                │ KATEGORI │ │ PEMINJAMAN │<br>
-                ├──────────────┤ ├─────────────────────────┤<br>
-                │• id_kategori │ │• id_peminjaman │<br>
-                │ nama_kategori│ │ kode_pinjam │<br>
-                └──────────────┘ │ id_anggota FK │<br>
-                │ tgl_pinjam │<br>
-                │ tgl_jatuh_tempo │<br>
-                │ tgl_kembali │<br>
-                │ status │<br>
-                │ total_denda │<br>
-                └──────────┬──────────────┘<br>
-                │ 1<br>
-                │<br>
-                ┌──────┴──────────────────┐<br>
-                │ DETAIL_PEMINJAMAN │<br>
-                ├─────────────────────────┤<br>
-                │• id_detail │<br>
-                │ id_peminjaman FK │<br>
-                │ id_buku FK │<br>
-                │ jumlah │<br>
-                └─────────────────────────┘
-            </div>
-
-            <h4>Mapping ERD ke Struktur Tabel:</h4>
+            <h3>4.2 Contoh Hasil Rancangan: Tabel Perpustakaan</h3>
             <div class="table-wrapper">
                 <table>
                     <caption>Tabel: tb_buku</caption>
                     <thead>
-                        <tr><th>Field</th><th>Type</th><th>Constraint</th><th>Deskripsi</th></tr>
+                        <tr><th>Kolom</th><th>Tipe</th><th>Constraint</th><th>Keterangan</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>id_buku</td><td>INT(11)</td><td><span class="tag tag-primary">PK</span>, AUTO_INCREMENT</td><td>Primary key</td></tr>
-                        <tr><td>kode_buku</td><td>VARCHAR(10)</td><td>UNIQUE, NOT NULL</td><td>BKU-0001</td></tr>
-                        <tr><td>judul</td><td>VARCHAR(255)</td><td>NOT NULL, FULLTEXT INDEX</td><td>Untuk pencarian</td></tr>
-                        <tr><td>pengarang</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>-</td></tr>
-                        <tr><td>penerbit</td><td>VARCHAR(100)</td><td>DEFAULT NULL</td><td>-</td></tr>
-                        <tr><td>isbn</td><td>VARCHAR(20)</td><td>UNIQUE</td><td>ISBN 13 digit</td></tr>
-                        <tr><td>id_kategori</td><td>INT(11)</td><td><span class="tag tag-danger">FK</span> → tb_kategori</td><td>Relasi ke kategori</td></tr>
-                        <tr><td>tahun_terbit</td><td>YEAR</td><td>DEFAULT NULL</td><td>-</td></tr>
-                        <tr><td>stok</td><td>INT(3)</td><td>NOT NULL, DEFAULT 0</td><td>Stok tersedia</td></tr>
-                        <tr><td>created_at</td><td>TIMESTAMP</td><td>DEFAULT CURRENT_TIMESTAMP</td><td>Auto timestamp</td></tr>
-                        <tr><td>updated_at</td><td>TIMESTAMP</td><td>ON UPDATE CURRENT_TIMESTAMP</td><td>Auto update</td></tr>
+                        <tr><td>id_buku</td><td>INT(11)</td><td><span class="tag tag-primary">PK</span>, AI</td><td>ID unik buku</td></tr>
+                        <tr><td>kode_buku</td><td>VARCHAR(10)</td><td>UNIQUE</td><td>BK001</td></tr>
+                        <tr><td>judul</td><td>VARCHAR(255)</td><td>NOT NULL</td><td>Judul buku</td></tr>
+                        <tr><td>pengarang</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Nama pengarang</td></tr>
+                        <tr><td>penerbit</td><td>VARCHAR(100)</td><td>NULL</td><td>Nama penerbit</td></tr>
+                        <tr><td>tahun</td><td>YEAR</td><td>NULL</td><td>Tahun terbit</td></tr>
+                        <tr><td>stok</td><td>INT(3)</td><td>DEFAULT 0</td><td>Jumlah buku</td></tr>
                     </tbody>
                 </table>
             </div>
-
             <div class="table-wrapper">
                 <table>
                     <caption>Tabel: tb_anggota</caption>
                     <thead>
-                        <tr><th>Field</th><th>Type</th><th>Constraint</th></tr>
+                        <tr><th>Kolom</th><th>Tipe</th><th>Constraint</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>id_anggota</td><td>INT(11)</td><td><span class="tag tag-primary">PK</span>, AUTO_INCREMENT</td></tr>
-                        <tr><td>kode_anggota</td><td>VARCHAR(10)</td><td>UNIQUE, NOT NULL (AGT-0001)</td></tr>
-                        <tr><td>nis</td><td>VARCHAR(20)</td><td>UNIQUE, NOT NULL</td></tr>
-                        <tr><td>nama_lengkap</td><td>VARCHAR(150)</td><td>NOT NULL</td></tr>
-                        <tr><td>kelas</td><td>VARCHAR(15)</td><td>NOT NULL (XII PPLG 1)</td></tr>
-                        <tr><td>jurusan</td><td>ENUM('PPLG','TKJ','MM','AKL')</td><td>NOT NULL</td></tr>
-                        <tr><td>email</td><td>VARCHAR(100)</td><td>UNIQUE</td></tr>
-                        <tr><td>no_hp</td><td>VARCHAR(15)</td><td>DEFAULT NULL</td></tr>
-                        <tr><td>alamat</td><td>TEXT</td><td>DEFAULT NULL</td></tr>
-                        <tr><td>status</td><td>ENUM('aktif','nonaktif')</td><td>DEFAULT 'aktif'</td></tr>
+                        <tr><td>id_anggota</td><td>INT(11)</td><td><span class="tag tag-primary">PK</span>, AI</td></tr>
+                        <tr><td>nis</td><td>VARCHAR(15)</td><td>UNIQUE</td></tr>
+                        <tr><td>nama</td><td>VARCHAR(100)</td><td>NOT NULL</td></tr>
+                        <tr><td>kelas</td><td>VARCHAR(15)</td><td>NOT NULL</td></tr>
+                        <tr><td>no_hp</td><td>VARCHAR(15)</td><td>NULL</td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <div class="tip-box">
-                <strong>💡 Tips Penamaan untuk PPLG:</strong><br>
-                • Gunakan prefix <code>tb_</code> untuk tabel (standar industri Indonesia)<br>
-                • Primary key: <code>id_[entitas]</code> contoh: <code>id_buku</code><br>
-                • Foreign key: sama persis dengan primary key referensinya<br>
-                • Snake_case untuk semua nama (hindari CamelCase atau spasi)<br>
-                • Nama kolom deskriptif: <code>nama_lengkap</code> bukan <code>nm</code>
+            <div class="table-wrapper">
+                <table>
+                    <caption>Tabel: tb_peminjaman</caption>
+                    <thead>
+                        <tr><th>Kolom</th><th>Tipe</th><th>Constraint</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>id_pinjam</td><td>INT(11)</td><td><span class="tag tag-primary">PK</span>, AI</td></tr>
+                        <tr><td>id_anggota</td><td>INT(11)</td><td><span class="tag tag-danger">FK</span> → tb_anggota</td></tr>
+                        <tr><td>id_buku</td><td>INT(11)</td><td><span class="tag tag-danger">FK</span> → tb_buku</td></tr>
+                        <tr><td>tgl_pinjam</td><td>DATE</td><td>NOT NULL</td></tr>
+                        <tr><td>tgl_kembali</td><td>DATE</td><td>NULL</td></tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 35%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 35%</p>
         </section>
 
-        <!-- ==================== 4. TIPE DATA DETAIL ==================== -->
+        <!-- ==================== 5. TIPE DATA ==================== -->
         <section id="tipe-data" class="card">
-            <h2><span class="icon">🔢</span> 4. Tipe Data MySQL - Panduan Lengkap</h2>
+            <h2><span class="icon">🔢</span> Bagian 5: Memahami Tipe Data</h2>
 
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Memilih tipe data yang tepat dan efisien sesuai kebutuhan aplikasi.
+            <h3>5.1 Kenapa Tipe Data Penting?</h3>
+            <p>Tipe data menentukan <strong>jenis nilai</strong> yang bisa disimpan di sebuah kolom. Salah pilih tipe data = boros memori, error saat input, atau hasil perhitungan yang tidak akurat.</p>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">📌</span> Tipe Data Numerik (Angka)</div>
+                <div class="step-content">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Tipe</th><th>Ukuran</th><th>Rentang</th><th>Digunakan Untuk</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>TINYINT</strong></td><td>1 byte</td><td>-128 s/d 127</td><td>Umur, rating, status (0/1)</td></tr>
+                                <tr><td><strong>SMALLINT</strong></td><td>2 byte</td><td>-32rb s/d 32rb</td><td>Jumlah halaman, stok kecil</td></tr>
+                                <tr><td><strong>INT(11)</strong></td><td>4 byte</td><td>-2M s/d 2M</td><td>⭐ Primary Key, Foreign Key, jumlah</td></tr>
+                                <tr><td><strong>DECIMAL(10,2)</strong></td><td>Variabel</td><td>Presisi sempurna</td><td>⭐ HARGA, UANG, GAJI</td></tr>
+                                <tr><td><strong>FLOAT</strong></td><td>4 byte</td><td>Presisi rendah</td><td>Statistik, persentase</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa harga harus pakai DECIMAL? Kenapa tidak INT atau FLOAT?</strong><br>
+                    • <strong>INT</strong> tidak bisa menyimpan koma (Rp 10.500 tidak bisa)<br>
+                    • <strong>FLOAT</strong> bisa menyimpan koma, tapi tidak presisi. Rp 10.500,00 bisa jadi Rp 10.499,9999 — ini merugikan!<br>
+                    • <strong>DECIMAL(10,2)</strong> menjamin presisi sempurna. (10,2) artinya 8 digit bulat + 2 digit desimal
+                </div>
             </div>
 
-            <h3>4.1 Prinsip Pemilihan Tipe Data</h3>
-            <ol style="padding-left: 20px;">
-                <li><strong>Sesuaikan dengan data</strong> - Jangan pakai BIGINT untuk umur (cukup TINYINT)</li>
-                <li><strong>Efisiensi storage</strong> - VARCHAR(20) untuk nama kota, bukan VARCHAR(255)</li>
-                <li><strong>Akurasi perhitungan</strong> - DECIMAL untuk uang, jangan FLOAT/DOUBLE</li>
-                <li><strong>Index-friendly</strong> - CHAR lebih cepat di-index daripada VARCHAR</li>
-            </ol>
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">📌</span> Tipe Data String (Teks)</div>
+                <div class="step-content">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Tipe</th><th>Maks</th><th>Digunakan Untuk</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>CHAR(5)</strong></td><td>255 char</td><td>Data panjang TETAP (kode pos, NIS, gender M/F)</td></tr>
+                                <tr><td><strong>VARCHAR(255)</strong></td><td>65.535 char</td><td>⭐ Data panjang BERVARIASI (nama, email, judul)</td></tr>
+                                <tr><td><strong>TEXT</strong></td><td>65.535 char</td><td>Deskripsi, artikel, alamat panjang</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 CHAR vs VARCHAR: Apa bedanya?</strong><br>
+                    • <strong>CHAR(10)</strong> menyimpan "Budi" → tetap pakai 10 karakter (ditambah spasi). <u>Lebih cepat tapi boros</u><br>
+                    • <strong>VARCHAR(10)</strong> menyimpan "Budi" → hanya pakai 4 karakter. <u>Lebih hemat</u><br>
+                    Pakai CHAR kalau panjang data SELALU sama. Pakai VARCHAR kalau panjang data BERVARIASI.
+                </div>
+            </div>
 
-            <h3>4.2 Tipe Numerik - Detail Teknis</h3>
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">📌</span> Tipe Data Tanggal & Waktu</div>
+                <div class="step-content">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Tipe</th><th>Format</th><th>Contoh Penggunaan</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>DATE</strong></td><td>YYYY-MM-DD</td><td>⭐ Tanggal lahir, tanggal pinjam</td></tr>
+                                <tr><td><strong>DATETIME</strong></td><td>YYYY-MM-DD HH:MM:SS</td><td>Waktu transaksi lengkap</td></tr>
+                                <tr><td><strong>YEAR</strong></td><td>YYYY</td><td>Tahun terbit, tahun angkatan</td></tr>
+                                <tr><td><strong>TIMESTAMP</strong></td><td>Auto</td><td>⭐ created_at, updated_at</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa format tanggal MySQL YYYY-MM-DD? Kenapa tidak DD-MM-YYYY?</strong><br>
+                    Format YYYY-MM-DD adalah standar internasional (ISO 8601). Keuntungan: bisa di-sorting dengan benar (2024-01-01 < 2024-12-31). Kalau DD-MM-YYYY, sorting akan kacau.
+                </div>
+            </div>
+
+            <h3>5.2 Cheat Sheet: Tipe Data untuk Kolom Umum</h3>
             <div class="table-wrapper">
                 <table>
                     <thead>
-                        <tr><th>Tipe</th><th>Bytes</th><th>Range (Signed)</th><th>Range (Unsigned)</th><th>Use Case</th></tr>
+                        <tr><th>Data yang Disimpan</th><th>Tipe Data Rekomendasi</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>TINYINT</td><td>1</td><td>-128 to 127</td><td>0 to 255</td><td>Umur, rating 1-5, boolean</td></tr>
-                        <tr><td>SMALLINT</td><td>2</td><td>-32,768 to 32,767</td><td>0 to 65,535</td><td>Jumlah halaman, stok kecil</td></tr>
-                        <tr><td>MEDIUMINT</td><td>3</td><td>-8.3M to 8.3M</td><td>0 to 16.7M</td><td>Jumlah populasi kota</td></tr>
-                        <tr><td>INT</td><td>4</td><td>-2.1B to 2.1B</td><td>0 to 4.2B</td><td>⭐ Primary key, foreign key</td></tr>
-                        <tr><td>BIGINT</td><td>8</td><td>-9.2 Quintillion</td><td>0 to 18.4 Quintillion</td><td>ID skala besar, timestamp</td></tr>
-                        <tr><td>FLOAT</td><td>4</td><td>Presisi ~7 digit</td><td>-</td><td>Statistik, persentase</td></tr>
-                        <tr><td>DOUBLE</td><td>8</td><td>Presisi ~15 digit</td><td>-</td><td>Ilmiah, kalkulasi kompleks</td></tr>
-                        <tr><td>DECIMAL(M,D)</td><td>Bervariasi</td><td>Tergantung M</td><td>-</td><td>⭐ Uang, harga, gaji</td></tr>
+                        <tr><td>ID / Primary Key</td><td><code>INT(11) AUTO_INCREMENT</code></td></tr>
+                        <tr><td>Nama orang</td><td><code>VARCHAR(100-200)</code></td></tr>
+                        <tr><td>Email</td><td><code>VARCHAR(100-255)</code></td></tr>
+                        <tr><td>Nomor telepon</td><td><code>VARCHAR(13-15)</code></td></tr>
+                        <tr><td>Harga / Uang</td><td><code>DECIMAL(10,2)</code> ⭐</td></tr>
+                        <tr><td>Tanggal</td><td><code>DATE</code></td></tr>
+                        <tr><td>Waktu transaksi</td><td><code>TIMESTAMP</code> atau <code>DATETIME</code></td></tr>
+                        <tr><td>Jenis kelamin</td><td><code>ENUM('L','P')</code></td></tr>
+                        <tr><td>Status aktif/nonaktif</td><td><code>TINYINT(1)</code> (0 atau 1)</td></tr>
+                        <tr><td>Alamat lengkap</td><td><code>TEXT</code></td></tr>
                     </tbody>
                 </table>
             </div>
-
-            <div class="code-box">
-                <strong>📐 DECIMAL(M,D) Parameter:</strong><br>
-                • <strong>M</strong> = Maximum total digit (1-65)<br>
-                • <strong>D</strong> = Digit di belakang koma (0-30)<br>
-                • <code>DECIMAL(10,2)</code> = 8 digit bulat + 2 digit desimal<br>
-                • Maksimal: 99999999.99
-            </div>
-
-            <h3>4.3 Tipe String - Detail Teknis</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>Tipe</th><th>Storage</th><th>Max Size</th><th>Karakteristik</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>CHAR(N)</td><td>N bytes (fixed)</td><td>255 chars</td><td>Fixed-length, lebih cepat, padding dengan spasi</td></tr>
-                        <tr><td>VARCHAR(N)</td><td>N+1 bytes</td><td>65,535 bytes</td><td>Variable-length, hemat storage</td></tr>
-                        <tr><td>TINYTEXT</td><td>N+1</td><td>255 chars</td><td>Seperti VARCHAR(255)</td></tr>
-                        <tr><td>TEXT</td><td>N+2</td><td>65,535 chars</td><td>⭐ Konten panjang, tidak bisa di-index penuh</td></tr>
-                        <tr><td>MEDIUMTEXT</td><td>N+3</td><td>16.7M chars</td><td>Dokumen, artikel panjang</td></tr>
-                        <tr><td>LONGTEXT</td><td>N+4</td><td>4.2B chars</td><td>Data sangat besar</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="warning-box">
-                <strong>⚠️ VARCHAR vs TEXT:</strong><br>
-                • VARCHAR bisa di-index seluruhnya, TEXT hanya bisa di-index prefix (N karakter pertama)<br>
-                • VARCHAR disimpan inline dengan row, TEXT disimpan terpisah<br>
-                • Untuk kolom yang sering di-search, pakai VARCHAR
-            </div>
-
-            <h3>4.4 Tipe Data JSON (MySQL 5.7+)</h3>
-            <div class="code-box">
-                <strong>📦 JSON Column - Fitur Modern untuk PPLG:</strong><br>
-                <code>data_tambahan JSON DEFAULT NULL</code><br><br>
-                Contoh data: <code>{"warna": "merah", "berat": 1.5, "tags": ["best-seller"]}</code><br><br>
-                Query JSON: <code>SELECT * FROM produk WHERE JSON_EXTRACT(data_tambahan, '$.warna') = 'merah';</code><br><br>
-                <strong>Gunakan JSON untuk:</strong> Data yang strukturnya sering berubah, metadata fleksibel<br>
-                <strong>JANGAN untuk:</strong> Data yang perlu relasi, data yang sering di-query dengan WHERE
-            </div>
-
-            <h3>4.5 Cheat Sheet Pemilihan Tipe Data</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>Data</th><th>Tipe Rekomendasi</th><th>Contoh</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>ID / Primary Key</td><td>INT(11) AUTO_INCREMENT</td><td>id_user</td></tr>
-                        <tr><td>Nama orang</td><td>VARCHAR(100-200)</td><td>nama_lengkap</td></tr>
-                        <tr><td>Email</td><td>VARCHAR(100-255)</td><td>email</td></tr>
-                        <tr><td>Password (hashed)</td><td>VARCHAR(255)</td><td>password_hash</td></tr>
-                        <tr><td>Nomor telepon</td><td>VARCHAR(13-20)</td><td>no_hp</td></tr>
-                        <tr><td>Harga / Uang</td><td>DECIMAL(10,2)</td><td>harga, gaji</td></tr>
-                        <tr><td>Tanggal</td><td>DATE</td><td>tanggal_lahir</td></tr>
-                        <tr><td>Waktu transaksi</td><td>DATETIME atau TIMESTAMP</td><td>created_at</td></tr>
-                        <tr><td>Status aktif/nonaktif</td><td>TINYINT(1) atau BOOLEAN</td><td>is_active</td></tr>
-                        <tr><td>Jenis kelamin</td><td>ENUM('L','P')</td><td>gender</td></tr>
-                        <tr><td>Alamat lengkap</td><td>TEXT</td><td>alamat</td></tr>
-                        <tr><td>Gambar / File</td><td>VARCHAR(255)</td><td>gambar (simpan path-nya)</td></tr>
-                        <tr><td>Deskripsi produk</td><td>TEXT</td><td>deskripsi</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 45%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 45%</p>
         </section>
 
-        <!-- ==================== 5. NORMALISASI ==================== -->
+        <!-- ==================== 6. NORMALISASI ==================== -->
         <section id="normalisasi" class="card">
-            <h2><span class="icon">📐</span> 5. Normalisasi Database - Teori & Praktik</h2>
+            <h2><span class="icon">📐</span> Bagian 6: Normalisasi Database</h2>
 
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Menerapkan normalisasi 1NF, 2NF, 3NF untuk menghasilkan database yang efisien.
+            <h3>6.1 Apa Itu Normalisasi?</h3>
+            <p><strong>Normalisasi</strong> adalah teknik untuk <span class="highlight">menghilangkan data ganda (redundansi)</span> dalam database. Tujuannya agar database efisien, konsisten, dan mudah di-maintenance.</p>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Bentuk Tidak Normal (UNF) — Data Awal</div>
+                <div class="step-content">
+                    Bayangkan kita simpan semua data dalam satu tabel:
+                    <div class="code-block">
+                        <span class="lang-label">SALAH</span>
+| Nama   | Kelas    | Judul Buku      | Pengarang | Tgl Pinjam |
+|--------|----------|-----------------|-----------|------------|
+| Budi   | XII PPLG | MySQL Guide     | Ahmad     | 2024-01-10 |
+| Budi   | XII PPLG | PHP Basics      | Susi      | 2024-01-10 |
+| Ani    | XII PPLG | MySQL Guide     | Ahmad     | 2024-01-12 |
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Masalah apa yang terlihat?</strong><br>
+                    • Data "Budi" dan "XII PPLG" ditulis <strong>berulang</strong> → boros tempat<br>
+                    • Kalau Budi pindah kelas, harus <strong>update banyak baris</strong> → rawan lupa<br>
+                    • Kalau hapus peminjaman Ani, data "MySQL Guide" ikut hilang → <strong>data loss</strong>
+                </div>
             </div>
 
-            <h3>5.1 Mengapa Normalisasi Penting?</h3>
-            <p>Normalisasi menghilangkan <strong>anomali data</strong> (insert anomaly, update anomaly, delete anomaly) dan <strong>redundansi data</strong> (data duplikat). Database yang tidak ternormalisasi akan menyulitkan development dan maintenance.</p>
-
-            <h3>5.2 Bentuk Normal (Normal Form)</h3>
-
-            <h4>📌 Unnormalized Form (UNF) - Data Awal</h4>
-            <div class="code-block">
-                <span class="lang-label">UNF</span>
-Tabel: PEMINJAMAN (Belum Normal)
-┌──────────┬──────────┬──────────────────────────────────────┬────────────┐
-│ id_pinjam│ id_agt   │ buku (judul, pengarang, tgl_pinjam)   │ tgl_kembali│
-├──────────┼──────────┼──────────────────────────────────────┼────────────┤
-│ P01      │ A01      │ MySQL Guide - Ahmad - 2024-01-10,     │ 2024-01-17 │
-│          │          │ PHP Basics - Susi - 2024-01-10        │            │
-│ P02      │ A02      │ MySQL Guide - Ahmad - 2024-01-12      │ 2024-01-19 │
-└──────────┴──────────┴──────────────────────────────────────┴────────────┘
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> First Normal Form (1NF) — Data Atomik</div>
+                <div class="step-content">
+                    <strong>Syarat:</strong> Setiap kolom hanya berisi <strong>satu nilai</strong> (tidak boleh array/list).
+                    <div class="code-block">
+                        <span class="lang-label">1NF</span>
+| id | Nama   | Kelas    | Judul Buku      | Pengarang | Tgl Pinjam |
+|----|--------|----------|-----------------|-----------|------------|
+| 1  | Budi   | XII PPLG | MySQL Guide     | Ahmad     | 2024-01-10 |
+| 2  | Budi   | XII PPLG | PHP Basics      | Susi      | 2024-01-10 |
+| 3  | Ani    | XII PPLG | MySQL Guide     | Ahmad     | 2024-01-12 |
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Sudah 1NF, tapi masih ada masalah?</strong><br>
+                    Ya! Data Budi-XII PPLG masih muncul 2x. Data Ahmad juga 2x. Ini masih redundan. Perlu lanjut ke 2NF.
+                </div>
             </div>
-            <p style="color:#dc2626;"><strong>Masalah:</strong> Kolom "buku" berisi multiple values (tidak atomik), data pengarang diulang, struktur tidak jelas.</p>
 
-            <h4>📌 First Normal Form (1NF) - Data Atomik</h4>
-            <p><strong>Syarat:</strong> Setiap kolom berisi nilai tunggal (atomik), tidak ada repeating group.</p>
-            <div class="code-block">
-                <span class="lang-label">1NF</span>
-┌──────────┬──────────┬─────────────────┬───────────┬────────────┬────────────┐
-│ id_pinjam│ id_agt   │ judul_buku      │ pengarang │ tgl_pinjam │ tgl_kembali│
-├──────────┼──────────┼─────────────────┼───────────┼────────────┼────────────┤
-│ P01      │ A01      │ MySQL Guide     │ Ahmad     │ 2024-01-10 │ 2024-01-17 │
-│ P01      │ A01      │ PHP Basics      │ Susi      │ 2024-01-10 │ 2024-01-17 │  ⚠️ Duplikat
-│ P02      │ A02      │ MySQL Guide     │ Ahmad     │ 2024-01-12 │ 2024-01-19 │  ⚠️ Duplikat
-└──────────┴──────────┴─────────────────┴───────────┴────────────┴────────────┘
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> Second Normal Form (2NF) — Hilangkan Ketergantungan Parsial</div>
+                <div class="step-content">
+                    <strong>Syarat:</strong> Pisahkan data yang hanya bergantung pada SEBAGIAN primary key.
+                    <div class="code-block">
+                        <span class="lang-label">2NF - Tabel terpisah</span>
+Tabel Anggota:          Tabel Buku:              Tabel Peminjaman:
+| id | Nama | Kelas |   | id | Judul | Pengarang |   | id | id_agt | id_buku | Tgl |
+|----|------|-------|   |----|-------|-----------|   |----|--------|---------|------|
+| A1 | Budi | XII   |   | B1 | MySQL | Ahmad     |   | P1 | A1     | B1      | ... |
+| A2 | Ani  | XII   |   | B2 | PHP   | Susi      |   | P2 | A1     | B2      | ... |
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apa keuntungannya?</strong><br>
+                    Sekarang data anggota dan buku hanya disimpan <strong>sekali</strong>. Tabel peminjaman hanya menyimpan ID sebagai penghubung. Kalau Budi pindah kelas, cukup update 1 baris di tabel Anggota.
+                </div>
             </div>
-            <p style="color:#f59e0b;"><strong>Masalah:</strong> Data id_pinjam, id_agt, tgl_kembali diulang-ulang (partial dependency).</p>
 
-            <h4>📌 Second Normal Form (2NF) - Hilangkan Partial Dependency</h4>
-            <p><strong>Syarat:</strong> Sudah 1NF + semua kolom non-key bergantung penuh pada primary key.</p>
-            <div class="code-block">
-                <span class="lang-label">2NF</span>
-Tabel: peminjaman (header)      Tabel: detail_peminjaman
-┌──────────┬──────────┬────────────┐  ┌──────────┬─────────────────┬───────────┐
-│*id_pinjam│ id_agt   │ tgl_kembali│  │*id_pinjam│ judul_buku      │ pengarang │
-├──────────┼──────────┼────────────┤  │*id_detail │                 │           │
-│ P01      │ A01      │ 2024-01-17 │  ├──────────┼─────────────────┼───────────┤
-│ P02      │ A02      │ 2024-01-19 │  │ P01      │ MySQL Guide     │ Ahmad     │
-└──────────┴──────────┴────────────┘  │ P01      │ PHP Basics      │ Susi      │
-│ P02      │ MySQL Guide     │ Ahmad     │  ⚠️ Duplikat pengarang
-└──────────┴─────────────────┴───────────┘
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">4</span> Third Normal Form (3NF) — Hilangkan Ketergantungan Transitif</div>
+                <div class="step-content">
+                    <strong>Syarat:</strong> Kolom non-key tidak boleh bergantung pada kolom non-key lain.
+                    <div class="code-block">
+                        <span class="lang-label">3NF - Tambah tabel Kategori</span>
+Tabel Kategori:         Tabel Buku (revisi):
+| id | nama_kategori |   | id | judul | pengarang | id_kategori (FK) |
+|----|---------------|   |----|-------|-----------|------------------|
+| 1  | Pemrograman   |   | B1 | MySQL | Ahmad     | 1                |
+| 2  | Desain        |   | B2 | UI/UX | Dian      | 2                |
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa kategori harus dipisah?</strong><br>
+                    Jika kategori disimpan langsung di tabel buku (sebagai teks), maka setiap ganti nama kategori harus update banyak baris. Dengan tabel terpisah, cukup update 1 kali di tabel Kategori.
+                </div>
             </div>
-            <p style="color:#f59e0b;"><strong>Masalah:</strong> Data pengarang masih diulang (transitive dependency: judul → pengarang).</p>
+        </section>
 
-            <h4>📌 Third Normal Form (3NF) - Hilangkan Transitive Dependency</h4>
-            <p><strong>Syarat:</strong> Sudah 2NF + tidak ada ketergantungan transitif (kolom non-key tidak boleh bergantung pada kolom non-key lain).</p>
-            <div class="code-block">
-                <span class="lang-label">3NF (Bentuk Final)</span>
-Tabel: buku                     Tabel: peminjaman              Tabel: detail_peminjaman
-┌──────────┬─────────────────┬───────────┐ ┌──────────┬──────────┬────────────┐ ┌──────────┬──────────┬──────────┐
-│*id_buku  │ judul           │ pengarang │ │*id_pinjam│ id_agt   │ tgl_kembali│ │*id_detail│ id_pinjam│ id_buku  │
-├──────────┼─────────────────┼───────────┤ ├──────────┼──────────┼────────────┤ ├──────────┼──────────┼──────────┤
-│ B01      │ MySQL Guide     │ Ahmad     │ │ P01      │ A01      │ 2024-01-17 │ │ D01      │ P01      │ B01      │
-│ B02      │ PHP Basics      │ Susi      │ │ P02      │ A02      │ 2024-01-19 │ │ D02      │ P01      │ B02      │
-└──────────┴─────────────────┴───────────┘ └──────────┴──────────┴────────────┘ │ D03      │ P02      │ B01      │
-└──────────┴──────────┴──────────┘
+        <!-- Karena keterbatasan ruang, bagian 7-16 akan menggunakan format detail-step yang sama -->
+        <!-- Saya akan melanjutkan dengan beberapa bagian kunci -->
+
+        <!-- ==================== 7. MEMBUAT DATABASE ==================== -->
+        <section id="buat-db" class="card">
+            <h2><span class="icon">🏗️</span> Bagian 7: Membuat Database Baru</h2>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Buka Tab Database</div>
+                <div class="step-content">
+                    Di halaman utama phpMyAdmin, klik tab <strong>"Database"</strong> di bagian atas.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa harus buat database dulu? Tidak bisa langsung buat tabel?</strong><br>
+                    Database adalah "wadah" untuk tabel. Semua tabel harus disimpan di dalam database. Ibaratnya: sebelum taruh rak (tabel) di gudang, kamu harus punya ruangannya (database) dulu.
+                </div>
             </div>
-            <p style="color:#10b981;"><strong>✅ Keuntungan 3NF:</strong> Tidak ada data duplikat, update pengarang cukup di satu tempat, insert/delete aman.</p>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Isi Nama Database</div>
+                <div class="step-content">
+                    Di kolom <strong>"Nama database"</strong>, ketik: <code>db_perpustakaan</code><br>
+                    (Gunakan huruf kecil, tanpa spasi, tanpa simbol khusus)
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa namanya db_perpustakaan? Kenapa tidak "Database Perpustakaan"?</strong><br>
+                    • Tidak boleh ada <strong>spasi</strong> dalam nama database<br>
+                    • Awalan <code>db_</code> adalah standar agar mudah dikenali sebagai database<br>
+                    • <strong>Snake_case</strong> (huruf kecil + underscore) adalah standar industri
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> Pilih Collation</div>
+                <div class="step-content">
+                    Di dropdown <strong>"Collation"</strong>, pilih: <code>utf8mb4_general_ci</code>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apa itu Collation? Kenapa harus utf8mb4?</strong><br>
+                    Collation adalah aturan pengurutan dan perbandingan karakter.<br>
+                    • <strong>utf8mb4</strong> = Mendukung <strong>semua karakter dunia</strong> termasuk Arab, China, Jepang, dan <strong>emoji</strong> 😊🚀<br>
+                    • <strong>general_ci</strong> = Case Insensitive (tidak bedakan huruf besar/kecil saat search)<br>
+                    Kalau pakai <code>latin1</code>, data dengan karakter khusus akan error atau jadi tanda tanya (???)
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">4</span> Klik Create</div>
+                <div class="step-content">
+                    Klik tombol <span class="tag tag-success">Create</span>. Database baru akan muncul di sidebar kiri.
+                </div>
+                <div class="step-analogy">
+                    <strong>🧠 Analogi:</strong> Kamu baru saja membuat "ruangan" baru di gudang. Sekarang ruangan sudah siap, tinggal pasang rak-nya (tabel).
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>📝 Alternatif via SQL:</strong><br>
+                <div class="code-block">
+                    <span class="lang-label">SQL</span>
+CREATE DATABASE db_perpustakaan
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 8. MEMBUAT TABEL ==================== -->
+        <section id="buat-tabel" class="card">
+            <h2><span class="icon">📋</span> Bagian 8: Membuat Tabel di Database</h2>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Pilih Database</div>
+                <div class="step-content">
+                    Klik <code>db_perpustakaan</code> di sidebar kiri. Area tengah akan berubah.
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Isi Nama Tabel & Jumlah Kolom</div>
+                <div class="step-content">
+                    Di bagian <strong>"Create table"</strong>:<br>
+                    • Name: <code>tb_buku</code><br>
+                    • Number of columns: <code>7</code> (sesuai rancangan)<br>
+                    Klik <span class="tag tag-success">Go</span>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa pakai prefix tb_? Kenapa tidak langsung "buku"?</strong><br>
+                    Awalan <code>tb_</code> menandakan bahwa ini adalah <strong>tabel</strong>. Di project besar, ini membantu membedakan tabel dari view, stored procedure, atau function. Standar yang banyak dipakai di Indonesia.
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> Mengisi Detail Kolom</div>
+                <div class="step-content">
+                    Isi form seperti tabel di bawah. Perhatikan setiap pilihan dengan teliti.
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Name</th><th>Type</th><th>Length</th><th>Default</th><th>Index</th><th>A_I</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>id_buku</td><td>INT</td><td>11</td><td><em>(none)</em></td><td>PRIMARY</td><td>✅</td></tr>
+                                <tr><td>kode_buku</td><td>VARCHAR</td><td>10</td><td><em>(none)</em></td><td>UNIQUE</td><td>-</td></tr>
+                                <tr><td>judul</td><td>VARCHAR</td><td>255</td><td><em>(none)</em></td><td>-</td><td>-</td></tr>
+                                <tr><td>pengarang</td><td>VARCHAR</td><td>100</td><td><em>(none)</em></td><td>-</td><td>-</td></tr>
+                                <tr><td>penerbit</td><td>VARCHAR</td><td>100</td><td>NULL</td><td>-</td><td>-</td></tr>
+                                <tr><td>tahun</td><td>YEAR</td><td>-</td><td>NULL</td><td>-</td><td>-</td></tr>
+                                <tr><td>stok</td><td>INT</td><td>3</td><td>0</td><td>-</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Penjelasan Setiap Pilihan:</strong><br>
+                    • <strong>A_I (AUTO_INCREMENT)</strong> ✅: Angka akan naik otomatis (1,2,3...). Centang ini hanya untuk id_buku. Kenapa? Karena kita tidak mau repot mengisi ID manual. MySQL yang akan mengisikan otomatis.<br>
+                    • <strong>PRIMARY KEY</strong>: Menandakan kolom ini adalah identitas unik. Tidak boleh kosong, tidak boleh duplikat.<br>
+                    • <strong>UNIQUE</strong>: Tidak boleh duplikat, tapi BOLEH kosong (NULL). Cocok untuk kode_buku dan NIS.<br>
+                    • <strong>Default NULL</strong>: Kalau tidak diisi, nilainya kosong. Cocok untuk data opsional.<br>
+                    • <strong>Default 0</strong>: Kalau tidak diisi stok, otomatis 0. Ini masuk akal karena stok tidak mungkin NULL.
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">4</span> Klik Save</div>
+                <div class="step-content">
+                    Scroll ke bawah, klik tombol <strong>Save</strong> (atau <strong>Go</strong>). Tabel akan dibuat dan muncul di sidebar kiri.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apa yang terjadi saat Save?</strong><br>
+                    MySQL mengeksekusi perintah CREATE TABLE. phpMyAdmin mengirimkan perintah SQL ke MySQL, lalu MySQL membuat file fisik untuk menyimpan struktur dan data tabel. File ini ada di folder <code>C:\xampp\mysql\data\db_perpustakaan\</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 9. INSERT DATA ==================== -->
+        <section id="isi-data" class="card">
+            <h2><span class="icon">✏️</span> Bagian 9: Mengisi Data ke Tabel (INSERT)</h2>
+
+            <p>Setelah tabel dibuat, saatnya mengisi data. Operasi ini disebut <strong>INSERT</strong> (bagian dari CRUD: Create).</p>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Buka Tab Insert</div>
+                <div class="step-content">
+                    Klik tabel <code>tb_buku</code> di sidebar, lalu klik tab <strong>"Insert"</strong> di bagian atas.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa ada 2 baris form kosong?</strong><br>
+                    phpMyAdmin menyediakan 2 baris supaya kamu bisa langsung mengisi <strong>2 data sekaligus</strong>. Lebih efisien! Kalau hanya mau isi 1, cukup isi baris pertama saja.
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Isi Data Buku</div>
+                <div class="step-content">
+                    Isi kolom-kolom berikut (<strong>lewati id_buku</strong> karena AUTO_INCREMENT):
+                    <ul>
+                        <li><strong>kode_buku</strong>: BK001</li>
+                        <li><strong>judul</strong>: Belajar Database MySQL</li>
+                        <li><strong>pengarang</strong>: Ahmad Fauzi</li>
+                        <li><strong>penerbit</strong>: Gramedia</li>
+                        <li><strong>tahun</strong>: 2024</li>
+                        <li><strong>stok</strong>: 5</li>
+                    </ul>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa id_buku tidak diisi?</strong><br>
+                    Karena kita sudah centang <strong>AUTO_INCREMENT</strong>, MySQL akan otomatis mengisi angka 1 untuk data pertama, 2 untuk data kedua, dan seterusnya. Kalau kamu isi manual, malah bisa bentrok!
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> Klik Go / Simpan</div>
+                <div class="step-content">
+                    Scroll ke bawah, klik tombol <strong>Go</strong>. Data akan tersimpan!
+                </div>
+                <div class="step-analogy">
+                    <strong>🧠 Analogi:</strong> Kamu baru saja mengisi satu formulir dan memasukkannya ke dalam laci Buku. Formulir itu sekarang menjadi record/baris di tabel.
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">4</span> Cara Insert via SQL (Cara Pro)</div>
+                <div class="step-content">
+                    Klik tab <strong>"SQL"</strong>, lalu ketik:
+                    <div class="code-block">
+                        <span class="lang-label">SQL</span>
+INSERT INTO tb_buku (kode_buku, judul, pengarang, penerbit, tahun, stok)
+VALUES ('BK002', 'Pemrograman PHP', 'Susi Susanti', 'Elex Media', 2023, 3);
+                    </div>
+                    Klik <strong>Go</strong> untuk menjalankan.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa belajar SQL juga? Kan sudah ada GUI?</strong><br>
+                    GUI memudahkan, tapi SQL lebih <strong>powerful</strong> dan <strong>cepat</strong>. Di dunia kerja, programmer sering menulis SQL langsung. Selain itu, SQL bisa disimpan dalam file untuk backup atau automation.
+                </div>
+            </div>
 
             <div class="tip-box">
-                <strong>💡 Rule of Thumb untuk PPLG:</strong><br>
-                • Minimum target: <strong>3NF</strong> untuk project production<br>
-                • Ada BCNF (Boyce-Codd NF) dan 4NF, tapi jarang diperlukan untuk aplikasi umum<br>
-                • Normalisasi berlebihan bisa bikin query kompleks (banyak JOIN). Seimbangkan dengan performa!
+                <strong>💡 Tips:</strong> Coba isi beberapa data lagi agar tabel tidak kosong. Minimal 5 data buku berbeda. Ini akan berguna untuk latihan SELECT nanti.
             </div>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 55%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 55%</p>
         </section>
 
-        <!-- ==================== 6. IMPLEMENTASI CRUD ==================== -->
-        <section id="implementasi" class="card">
-            <h2><span class="icon">⚡</span> 6. Implementasi Operasi CRUD Advanced</h2>
+        <!-- ==================== 10. SELECT DATA ==================== -->
+        <section id="baca-data" class="card">
+            <h2><span class="icon">👀</span> Bagian 10: Membaca/Melihat Data (SELECT)</h2>
 
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Mengimplementasikan operasi CRUD lengkap dengan validasi dan best practice.
+            <p>Setelah data masuk, kita perlu melihatnya. Operasi ini disebut <strong>SELECT</strong> (bagian dari CRUD: Read).</p>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Browse Data</div>
+                <div class="step-content">
+                    Klik tabel <code>tb_buku</code> di sidebar. Secara default, tab <strong>"Browse"</strong> akan terbuka dan menampilkan semua data.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa langsung muncul data? Saya tidak klik apa-apa!</strong><br>
+                    Saat kamu klik nama tabel, phpMyAdmin otomatis menjalankan perintah <code>SELECT * FROM tb_buku</code>. Ini menampilkan semua kolom dan semua baris.
+                </div>
             </div>
 
-            <h3>6.1 CREATE - INSERT dengan Variasi</h3>
-
-            <h4>Insert Single Row:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="keyword">INSERT INTO</span> tb_buku (kode_buku, judul, pengarang, id_kategori, stok)
-<span class="keyword">VALUES</span> (<span class="string">'BKU-0001'</span>, <span class="string">'Database Systems'</span>, <span class="string">'Elmasri'</span>, <span class="number">2</span>, <span class="number">5</span>);
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Mencari Data Spesifik (Search)</div>
+                <div class="step-content">
+                    Klik tab <strong>"Search"</strong>. Kamu bisa mencari data dengan kriteria tertentu.<br>
+                    Contoh: Di kolom <strong>pengarang</strong>, pilih operator <strong>LIKE %...%</strong>, isi value: <code>Ahmad</code><br>
+                    Klik <strong>Go</strong>. Hanya buku dengan pengarang mengandung kata "Ahmad" yang muncul.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apa artinya LIKE %...%?</strong><br>
+                    <code>LIKE '%Ahmad%'</code> artinya: cari teks yang <strong>mengandung</strong> kata "Ahmad" di mana saja.<br>
+                    • <code>%</code> = wildcard (karakter apa saja, berapa pun jumlahnya)<br>
+                    • <code>%Ahmad%</code> = ada Ahmad di tengah/depan/belakang<br>
+                    • <code>Ahmad%</code> = diawali Ahmad<br>
+                    • <code>%Ahmad</code> = diakhiri Ahmad
+                </div>
             </div>
 
-            <h4>Insert Multiple Rows:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="keyword">INSERT INTO</span> tb_buku (kode_buku, judul, pengarang, id_kategori, stok)
-<span class="keyword">VALUES</span>
-    (<span class="string">'BKU-0002'</span>, <span class="string">'Clean Code'</span>, <span class="string">'Robert Martin'</span>, <span class="number">1</span>, <span class="number">3</span>),
-    (<span class="string">'BKU-0003'</span>, <span class="string">'Design Patterns'</span>, <span class="string">'GoF'</span>, <span class="number">1</span>, <span class="number">2</span>),
-    (<span class="string">'BKU-0004'</span>, <span class="string">'Refactoring'</span>, <span class="string">'Martin Fowler'</span>, <span class="number">1</span>, <span class="number">4</span>);
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> SELECT via SQL</div>
+                <div class="step-content">
+                    <div class="code-block">
+                        <span class="lang-label">SQL</span>
+<span class="comment">-- Lihat semua data</span>
+SELECT * FROM tb_buku;
+
+<span class="comment">-- Lihat buku dengan stok di atas 3</span>
+SELECT judul, stok FROM tb_buku WHERE stok > 3;
+
+<span class="comment">-- Urutkan berdasarkan judul A-Z</span>
+SELECT * FROM tb_buku ORDER BY judul ASC;
+
+<span class="comment">-- Tampilkan 3 data pertama</span>
+SELECT * FROM tb_buku LIMIT 3;
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa SELECT * tidak disarankan di production?</strong><br>
+                    <code>SELECT *</code> mengambil semua kolom. Kalau tabel punya 50 kolom, data yang diambil banyak dan <strong>lambat</strong>. Lebih baik sebutkan kolom yang diperlukan saja: <code>SELECT id_buku, judul, stok FROM tb_buku</code>.
+                </div>
             </div>
-
-            <h4>Insert dengan SELECT (Copy Data):</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="comment">-- Backup data buku ke tabel arsip</span>
-<span class="keyword">INSERT INTO</span> tb_buku_arsip
-<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_buku <span class="keyword">WHERE</span> stok = <span class="number">0</span>;
-            </div>
-
-            <h3>6.2 READ - SELECT dengan Filter & Sorting</h3>
-
-            <h4>Basic SELECT dengan WHERE, ORDER BY, LIMIT:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="comment">-- Cari buku dengan stok di atas 3, urutkan terbaru, ambil 10 data</span>
-<span class="keyword">SELECT</span> id_buku, kode_buku, judul, stok
-<span class="keyword">FROM</span> tb_buku
-<span class="keyword">WHERE</span> stok > <span class="number">3</span>
-<span class="keyword">ORDER BY</span> created_at <span class="keyword">DESC</span>
-<span class="keyword">LIMIT</span> <span class="number">10</span>;
-            </div>
-
-            <h4>SELECT dengan LIKE & Wildcard:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="comment">-- Cari buku dengan kata "database" di judul</span>
-<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_buku
-<span class="keyword">WHERE</span> judul <span class="keyword">LIKE</span> <span class="string">'%database%'</span>;
-
-<span class="comment">-- Cari buku pengarang dimulai dengan "Mar"</span>
-<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_buku
-<span class="keyword">WHERE</span> pengarang <span class="keyword">LIKE</span> <span class="string">'Mar%'</span>;
-            </div>
-
-            <h4>SELECT dengan Agregasi:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="comment">-- Hitung total buku per kategori</span>
-<span class="keyword">SELECT</span> k.nama_kategori,
-       <span class="function">COUNT</span>(b.id_buku) <span class="keyword">AS</span> jumlah_buku,
-       <span class="function">SUM</span>(b.stok) <span class="keyword">AS</span> total_stok,
-       <span class="function">AVG</span>(b.stok) <span class="keyword">AS</span> rata_rata_stok
-<span class="keyword">FROM</span> tb_buku b
-<span class="keyword">JOIN</span> tb_kategori k <span class="keyword">ON</span> b.id_kategori = k.id_kategori
-<span class="keyword">GROUP BY</span> k.id_kategori
-<span class="keyword">HAVING</span> <span class="function">COUNT</span>(b.id_buku) > <span class="number">1</span>
-<span class="keyword">ORDER BY</span> jumlah_buku <span class="keyword">DESC</span>;
-            </div>
-
-            <h3>6.3 UPDATE - Update Data dengan Kondisi</h3>
-
-            <h4>Update Single Row:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="keyword">UPDATE</span> tb_buku
-<span class="keyword">SET</span> stok = stok - <span class="number">1</span>, updated_at = <span class="function">NOW</span>()
-<span class="keyword">WHERE</span> id_buku = <span class="number">5</span> <span class="keyword">AND</span> stok > <span class="number">0</span>;
-            </div>
-
-            <h4>Update Multiple Rows dengan CASE:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="keyword">UPDATE</span> tb_buku
-<span class="keyword">SET</span> stok = <span class="keyword">CASE</span>
-    <span class="keyword">WHEN</span> id_buku = <span class="number">1</span> <span class="keyword">THEN</span> <span class="number">10</span>
-    <span class="keyword">WHEN</span> id_buku = <span class="number">2</span> <span class="keyword">THEN</span> <span class="number">20</span>
-    <span class="keyword">WHEN</span> id_buku = <span class="number">3</span> <span class="keyword">THEN</span> <span class="number">30</span>
-    <span class="keyword">ELSE</span> stok
-<span class="keyword">END</span>
-<span class="keyword">WHERE</span> id_buku <span class="keyword">IN</span> (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);
-            </div>
-
-            <h3>6.4 DELETE - Hapus Data dengan Aman</h3>
-
-            <h4>Soft Delete vs Hard Delete:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="comment">-- SOFT DELETE (Rekomendasi!) - Tambah kolom deleted_at</span>
-<span class="keyword">UPDATE</span> tb_buku
-<span class="keyword">SET</span> deleted_at = <span class="function">NOW</span>()
-<span class="keyword">WHERE</span> id_buku = <span class="number">10</span>;
-
-<span class="comment">-- HARD DELETE - Hati-hati!</span>
-<span class="keyword">DELETE FROM</span> tb_buku
-<span class="keyword">WHERE</span> id_buku = <span class="number">10</span>
-<span class="keyword">AND NOT EXISTS</span> (
-    <span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">FROM</span> tb_detail_peminjaman
-    <span class="keyword">WHERE</span> id_buku = <span class="number">10</span>
-);
-            </div>
-
-            <div class="danger-box">
-                <strong>🚨 WARNING UNTUK PPLG!</strong><br>
-                • Selalu gunakan <code>WHERE</code> pada UPDATE dan DELETE<br>
-                • Gunakan <strong>soft delete</strong> (tambah kolom deleted_at) untuk data penting<br>
-                • Cek foreign key constraint sebelum DELETE<br>
-                • Backup database sebelum operasi berbahaya!
-            </div>
-
-            <h3>6.5 TRANSACTION - Operasi Aman</h3>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="keyword">START TRANSACTION;</span>
-
-<span class="keyword">INSERT INTO</span> tb_peminjaman (kode_pinjam, id_anggota, tgl_pinjam, tgl_jatuh_tempo)
-<span class="keyword">VALUES</span> (<span class="string">'PJM-001'</span>, <span class="number">1</span>, <span class="function">CURDATE</span>(), <span class="function">DATE_ADD</span>(<span class="function">CURDATE</span>(), <span class="keyword">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>));
-
-<span class="comment">-- Ambil ID peminjaman yang baru saja dibuat</span>
-<span class="keyword">SET</span> @id_pinjam = <span class="function">LAST_INSERT_ID</span>();
-
-<span class="keyword">INSERT INTO</span> tb_detail_peminjaman (id_peminjaman, id_buku, jumlah)
-<span class="keyword">VALUES</span> (@id_pinjam, <span class="number">5</span>, <span class="number">1</span>);
-
-<span class="keyword">UPDATE</span> tb_buku <span class="keyword">SET</span> stok = stok - <span class="number">1</span> <span class="keyword">WHERE</span> id_buku = <span class="number">5</span> <span class="keyword">AND</span> stok > <span class="number">0</span>;
-
-<span class="comment">-- Jika semua sukses, commit. Jika gagal, rollback</span>
-<span class="keyword">COMMIT;</span>
-<span class="comment">-- ROLLBACK; -- Jika terjadi error</span>
-            </div>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 70%</p>
         </section>
 
-        <!-- ==================== 7. RELASI & JOIN ==================== -->
-        <section id="relasi-lanjut" class="card">
-            <h2><span class="icon">🔗</span> 7. Relasi, JOIN, dan Query Kompleks</h2>
+        <!-- ==================== 11-16: BAGIAN LANJUTAN ==================== -->
+        <!-- UPDATE, DELETE, RELASI, JOIN, EXPORT/IMPORT, TIPS -->
 
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Menguasai berbagai jenis JOIN untuk mengambil data dari multiple tabel.
+        <section id="update-data" class="card">
+            <h2><span class="icon">🔄</span> Bagian 11: Mengubah Data (UPDATE)</h2>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Edit Data via Browse</div>
+                <div class="step-content">
+                    Di tab <strong>Browse</strong>, klik ikon ✏️ (pensil) di samping data yang ingin diubah. Ubah nilai, klik <strong>Go</strong>.
+                </div>
             </div>
 
-            <h3>7.1 Jenis-Jenis JOIN</h3>
-            <div class="diagram">
-                INNER JOIN: &nbsp;&nbsp;&nbsp;&nbsp; LEFT JOIN: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RIGHT JOIN: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FULL JOIN:<br>
-                ┌───┬───┐ ┌───┬───┐ &nbsp; ┌───┬───┐ ┌───┬───┐ &nbsp;&nbsp; ┌───┬───┐ ┌───┬───┐ &nbsp; ┌───┬───┐ ┌───┬───┐<br>
-                │ A │ • │ │ • │ B │ &nbsp; │ A │ • │ │ • │ B │ &nbsp;&nbsp; │ A │ • │ │ • │ B │ &nbsp; │ A │ • │ │ • │ B │<br>
-                │ C │ • │ │ • │ D │ &nbsp; │ C │ • │ │ • │ D │ &nbsp;&nbsp; │ C │ • │ │ • │ D │ &nbsp; │ C │ • │ │ • │ D │<br>
-                │ E │   │ │   │ F │ &nbsp; │ E │   │ │   │   │ &nbsp;&nbsp; │   │   │ │   │ F │ &nbsp; │ E │   │ │   │ F │<br>
-                └───┴───┘ └───┴───┘ &nbsp; └───┴───┘ └───┴───┘ &nbsp;&nbsp; └───┴───┘ └───┴───┘ &nbsp; └───┴───┘ └───┴───┘<br>
-                Hanya yang cocok &nbsp; Semua kiri + yg cocok &nbsp; Semua kanan + yg cocok &nbsp; Semua data
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> UPDATE via SQL</div>
+                <div class="step-content">
+                    <div class="code-block">
+                        <span class="lang-label">SQL</span>
+UPDATE tb_buku
+SET stok = 10, penerbit = 'Gramedia Pustaka'
+WHERE id_buku = 1;
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa WHERE sangat penting?</strong><br>
+                    <strong>TANPA WHERE</strong>, SEMUA baris akan berubah! Contoh: <code>UPDATE tb_buku SET stok = 10;</code> akan mengubah stok SEMUA buku jadi 10. Ini bencana!<br>
+                    <strong>WHERE</strong> membatasi baris mana yang diubah. Selalu cek ulang WHERE sebelum eksekusi!
+                </div>
+                <div class="step-analogy">
+                    <strong>🧠 Analogi:</strong> WHERE seperti alamat rumah. Kalau kamu bilang "cat semua rumah jadi putih" tanpa alamat, semua rumah akan dicat. Tapi kalau "cat rumah nomor 5 jadi putih", hanya rumah no.5 yang dicat.
+                </div>
+            </div>
+        </section>
+
+        <section id="hapus-data" class="card">
+            <h2><span class="icon">🗑️</span> Bagian 12: Menghapus Data (DELETE)</h2>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Hapus Data via Browse</div>
+                <div class="step-content">
+                    Di tab <strong>Browse</strong>, klik ikon 🗑️ (tempat sampah) di samping data. Konfirmasi dengan <strong>OK</strong>.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apakah data yang dihapus bisa dikembalikan?</strong><br>
+                    <strong>TIDAK BISA!</strong> Operasi DELETE bersifat permanen. Itulah kenapa sebelum menghapus, pastikan kamu sudah <strong>backup</strong> database. Di dunia nyata, programmer sering pakai <strong>soft delete</strong> (tambah kolom deleted_at, isi dengan tanggal. Data tidak benar-benar dihapus, hanya disembunyikan).
+                </div>
             </div>
 
-            <h3>7.2 Contoh JOIN Lengkap</h3>
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> DELETE via SQL</div>
+                <div class="step-content">
+                    <div class="code-block">
+                        <span class="lang-label">SQL</span>
+DELETE FROM tb_buku WHERE id_buku = 5;
+                    </div>
+                </div>
+                <div class="danger-box">
+                    <strong>⚠️ BAHAYA!</strong> <code>DELETE FROM tb_buku;</code> (tanpa WHERE) akan menghapus <strong>SELURUH</strong> data di tabel!
+                </div>
+            </div>
+        </section>
 
-            <h4>INNER JOIN - Data Pemimjaman Aktif:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
+        <section id="relasi" class="card">
+            <h2><span class="icon">🔗</span> Bagian 13: Membuat Relasi (Foreign Key)</h2>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Pahami Konsep Foreign Key</div>
+                <div class="step-content">
+                    <strong>Foreign Key</strong> adalah kolom yang menghubungkan satu tabel ke tabel lain. Foreign key merujuk ke <strong>Primary Key</strong> di tabel referensi.
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa pakai Foreign Key? Kenapa tidak copy-paste data saja?</strong><br>
+                    Foreign key menjaga <strong>integritas data</strong>. Contoh: kamu tidak bisa memasukkan id_buku yang tidak ada di tabel buku ke tabel peminjaman. MySQL akan <strong>menolak</strong> otomatis. Ini mencegah data "yatim" (data yang merujuk ke sesuatu yang sudah tidak ada).
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Buat Tabel Peminjaman</div>
+                <div class="step-content">
+                    Buat tabel <code>tb_peminjaman</code> dengan kolom:<br>
+                    id_pinjam (INT, PK, AI), id_anggota (INT), id_buku (INT), tgl_pinjam (DATE), tgl_kembali (DATE)
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">3</span> Atur Foreign Key via Relation View</div>
+                <div class="step-content">
+                    <ol>
+                        <li>Buka tabel <code>tb_peminjaman</code> → tab <strong>Structure</strong></li>
+                        <li>Klik link <strong>"Relation view"</strong> di bawah tabel</li>
+                        <li>Di kolom <code>id_anggota</code>, pilih: <code>db_perpustakaan.tb_anggota.id_anggota</code></li>
+                        <li>ON DELETE: pilih <strong>CASCADE</strong>, ON UPDATE: pilih <strong>CASCADE</strong></li>
+                        <li>Lakukan hal sama untuk <code>id_buku</code> → <code>tb_buku.id_buku</code></li>
+                        <li>Klik <strong>Save</strong></li>
+                    </ol>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Apa artinya ON DELETE CASCADE?</strong><br>
+                    Kalau data di tabel induk (tb_buku) dihapus, maka data di tabel anak (tb_peminjaman) yang merujuk ke buku itu juga ikut terhapus otomatis. Ini mencegah data yatim.<br>
+                    <strong>Alternatif lain:</strong><br>
+                    • <strong>RESTRICT</strong> = Tolak penghapusan kalau masih ada data anak<br>
+                    • <strong>SET NULL</strong> = Jadikan NULL kolom foreign key-nya
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="card">
+            <h2><span class="icon">🔀</span> Bagian 14: JOIN Table (Menggabungkan Data)</h2>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Kenapa Butuh JOIN?</div>
+                <div class="step-content">
+                    Data tersebar di beberapa tabel yang saling terhubung. Untuk melihat data lengkap (misal: nama peminjam + judul buku), kamu perlu <strong>JOIN</strong>.
+                </div>
+            </div>
+
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Contoh INNER JOIN</div>
+                <div class="step-content">
+                    <div class="code-block">
+                        <span class="lang-label">SQL</span>
 <span class="keyword">SELECT</span>
-    p.kode_pinjam,
-    a.nama_lengkap,
-    a.kelas,
-    b.judul <span class="keyword">AS</span> judul_buku,
-    p.tgl_pinjam,
-    p.tgl_jatuh_tempo,
-    <span class="function">DATEDIFF</span>(p.tgl_jatuh_tempo, <span class="function">CURDATE</span>()) <span class="keyword">AS</span> sisa_hari
+    a.nama <span class="keyword">AS</span> nama_peminjam,
+    b.judul <span class="keyword">AS</span> buku_dipinjam,
+    p.tgl_pinjam
 <span class="keyword">FROM</span> tb_peminjaman p
 <span class="keyword">INNER JOIN</span> tb_anggota a <span class="keyword">ON</span> p.id_anggota = a.id_anggota
-<span class="keyword">INNER JOIN</span> tb_detail_peminjaman d <span class="keyword">ON</span> p.id_peminjaman = d.id_peminjaman
-<span class="keyword">INNER JOIN</span> tb_buku b <span class="keyword">ON</span> d.id_buku = b.id_buku
-<span class="keyword">WHERE</span> p.status = <span class="string">'dipinjam'</span>
-<span class="keyword">ORDER BY</span> p.tgl_jatuh_tempo <span class="keyword">ASC</span>;
+<span class="keyword">INNER JOIN</span> tb_buku b <span class="keyword">ON</span> p.id_buku = b.id_buku;
+                    </div>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Bagaimana cara membaca INNER JOIN?</strong><br>
+                    "Ambil data dari tb_peminjaman (p), lalu <strong>cocokkan</strong> dengan tb_anggota (a) berdasarkan id_anggota. Kalau cocok, gabungkan barisnya. Lalu cocokkan lagi dengan tb_buku (b) berdasarkan id_buku."<br>
+                    Hasilnya: satu tabel gabungan yang memuat nama peminjam, judul buku, dan tanggal pinjam.
+                </div>
+                <div class="step-analogy">
+                    <strong>🧠 Analogi:</strong> JOIN seperti mencocokkan dua lembar absen. Lembar A berisi NIS dan Nama. Lembar B berisi NIS dan Nilai. Kamu gabungkan berdasarkan NIS, hasilnya: NIS, Nama, dan Nilai dalam satu tampilan.
+                </div>
             </div>
-
-            <h4>LEFT JOIN - Semua Buku (termasuk yg belum pernah dipinjam):</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="keyword">SELECT</span>
-    b.kode_buku,
-    b.judul,
-    <span class="function">COUNT</span>(d.id_detail) <span class="keyword">AS</span> total_dipinjam
-<span class="keyword">FROM</span> tb_buku b
-<span class="keyword">LEFT JOIN</span> tb_detail_peminjaman d <span class="keyword">ON</span> b.id_buku = d.id_buku
-<span class="keyword">GROUP BY</span> b.id_buku
-<span class="keyword">ORDER BY</span> total_dipinjam <span class="keyword">DESC</span>;
-            </div>
-
-            <h4>Subquery - Anggota yang belum mengembalikan buku:</h4>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="keyword">SELECT</span> nama_lengkap, kelas
-<span class="keyword">FROM</span> tb_anggota
-<span class="keyword">WHERE</span> id_anggota <span class="keyword">IN</span> (
-    <span class="keyword">SELECT DISTINCT</span> id_anggota
-    <span class="keyword">FROM</span> tb_peminjaman
-    <span class="keyword">WHERE</span> status = <span class="string">'dipinjam'</span>
-    <span class="keyword">AND</span> tgl_jatuh_tempo < <span class="function">CURDATE</span>()
-);
-            </div>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 85%</p>
         </section>
 
-        <!-- ==================== 8. OPTIMASI & INDEX ==================== -->
-        <section id="optimasi" class="card">
-            <h2><span class="icon">🚀</span> 8. Optimasi Database & Index</h2>
+        <section id="export-import" class="card">
+            <h2><span class="icon">📦</span> Bagian 15: Ekspor & Impor Database</h2>
 
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Mengoptimalkan performa database dengan index dan teknik optimasi.
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">1</span> Ekspor (Backup) Database</div>
+                <div class="step-content">
+                    <ol>
+                        <li>Klik database <code>db_perpustakaan</code> di sidebar</li>
+                        <li>Klik tab <strong>"Export"</strong></li>
+                        <li>Pilih <strong>Quick</strong> dan format <strong>SQL</strong></li>
+                        <li>Klik <span class="tag tag-primary">Go</span></li>
+                        <li>File .sql akan otomatis terdownload</li>
+                    </ol>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kenapa harus backup? File .sql itu apa isinya?</strong><br>
+                    File .sql berisi <strong>seluruh perintah SQL</strong> untuk membuat ulang database kamu dari nol. Isinya: CREATE DATABASE, CREATE TABLE, INSERT INTO, dll. Kalau database rusak atau hilang, kamu tinggal import file ini dan semua data kembali seperti semula.
+                </div>
+                <div class="step-analogy">
+                    <strong>🧠 Analogi:</strong> Ekspor = Fotokopi seluruh isi lemari arsip. Kalau lemari asli terbakar, kamu punya salinannya.
+                </div>
             </div>
 
-            <h3>8.1 Apa Itu Index?</h3>
-            <p><strong>Index</strong> seperti daftar isi buku. Tanpa index, MySQL harus scan seluruh tabel (full table scan). Dengan index, MySQL langsung melompat ke data yang dicari.</p>
-
-            <div class="info-box">
-                <strong>📊 Perbandingan Performa:</strong><br>
-                • Tanpa index: Mencari 1 record di 1 juta data = scan 1 juta row<br>
-                • Dengan index: Mencari 1 record di 1 juta data = scan ~20 row (B-Tree)<br>
-                <strong>Perbedaan kecepatan: 50.000x lebih cepat!</strong>
+            <div class="detail-step">
+                <div class="step-title"><span class="step-number">2</span> Impor (Restore) Database</div>
+                <div class="step-content">
+                    <ol>
+                        <li>Buat database baru (atau pilih database yang sudah ada)</li>
+                        <li>Klik tab <strong>"Import"</strong></li>
+                        <li>Klik <strong>"Choose File"</strong> → pilih file .sql</li>
+                        <li>Scroll ke bawah, klik <span class="tag tag-primary">Go</span></li>
+                        <li>Tunggu sampai muncul pesan sukses</li>
+                    </ol>
+                </div>
+                <div class="step-why">
+                    <strong>🤔 Kapan perlu impor?</strong><br>
+                    • Pindah komputer (dari laptop sekolah ke laptop pribadi)<br>
+                    • Mengumpulkan tugas dalam bentuk file .sql<br>
+                    • Restore setelah database rusak
+                </div>
             </div>
+        </section>
 
-            <h3>8.2 Jenis-Jenis Index</h3>
+        <section id="tips" class="card">
+            <h2><span class="icon">💡</span> Bagian 16: Tips, Best Practice & Checklist</h2>
+
+            <h3>16.1 Tips untuk PPLG</h3>
             <div class="table-wrapper">
                 <table>
                     <thead>
-                        <tr><th>Tipe</th><th>Deskripsi</th><th>Kapan Digunakan</th></tr>
+                        <tr><th>#</th><th>Best Practice</th><th>Kenapa?</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>PRIMARY KEY</strong></td><td>Index unik, clustered</td><td>Kolom ID (otomatis dibuat)</td></tr>
-                        <tr><td><strong>UNIQUE</strong></td><td>Index unik, boleh NULL</td><td>Email, NIS, kode unik</td></tr>
-                        <tr><td><strong>INDEX / KEY</strong></td><td>Index biasa, non-unique</td><td>Kolom yang sering di WHERE/JOIN</td></tr>
-                        <tr><td><strong>FULLTEXT</strong></td><td>Index untuk pencarian teks</td><td>Judul, deskripsi, artikel</td></tr>
-                        <tr><td><strong>COMPOSITE</strong></td><td>Gabungan beberapa kolom</td><td>WHERE kolom1 AND kolom2</td></tr>
+                        <tr><td>1</td><td>Selalu backup sebelum ngotak-atik</td><td>Mencegah kehilangan data</td></tr>
+                        <tr><td>2</td><td>Gunakan prefix tb_ untuk tabel</td><td>Standar industri, mudah dikenali</td></tr>
+                        <tr><td>3</td><td>Nama kolom deskriptif: nama_lengkap, bukan nm</td><td>Kode dibaca lebih sering daripada ditulis</td></tr>
+                        <tr><td>4</td><td>DECIMAL(10,2) untuk harga</td><td>FLOAT tidak presisi untuk uang</td></tr>
+                        <tr><td>5</td><td>Pakai ENGINE=InnoDB</td><td>Support Foreign Key dan transaksi</td></tr>
+                        <tr><td>6</td><td>Gunakan soft delete (kolom deleted_at)</td><td>Data bisa direcover jika tidak sengaja terhapus</td></tr>
+                        <tr><td>7</td><td>Tambahkan created_at & updated_at</td><td>Untuk tracking kapan data dibuat/diubah</td></tr>
+                        <tr><td>8</td><td>Jangan SELECT * di production</td><td>Ambil kolom yang diperlukan saja</td></tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3>8.3 Membuat Index</h3>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="comment">-- Single column index</span>
-<span class="keyword">CREATE INDEX</span> idx_judul <span class="keyword">ON</span> tb_buku(judul);
-
-<span class="comment">-- Composite index (urutan penting!)</span>
-<span class="keyword">CREATE INDEX</span> idx_kategori_stok <span class="keyword">ON</span> tb_buku(id_kategori, stok);
-
-<span class="comment">-- Fulltext index untuk pencarian</span>
-<span class="keyword">ALTER TABLE</span> tb_buku <span class="keyword">ADD FULLTEXT INDEX</span> ft_judul_pengarang (judul, pengarang);
-
-<span class="comment">-- Cara query dengan fulltext</span>
-<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_buku
-<span class="keyword">WHERE</span> <span class="function">MATCH</span>(judul, pengarang) <span class="keyword">AGAINST</span>(<span class="string">'database design'</span> <span class="keyword">IN NATURAL LANGUAGE MODE</span>);
-            </div>
-
-            <h3>8.4 Analisis Performa dengan EXPLAIN</h3>
-            <div class="code-block">
-                <span class="lang-label">SQL</span>
-<span class="comment">-- Cek bagaimana MySQL menjalankan query</span>
-<span class="keyword">EXPLAIN SELECT</span> * <span class="keyword">FROM</span> tb_buku <span class="keyword">WHERE</span> judul <span class="keyword">LIKE</span> <span class="string">'%mysql%'</span>;
-
-<span class="comment">-- Perhatikan kolom:
--- type: ALL (buruk) → index → range → ref → const (terbaik)
--- rows: semakin kecil semakin baik
--- key: index yang digunakan (NULL = tidak pakai index)</span>
-            </div>
-
-            <div class="tip-box">
-                <strong>💡 Best Practice Index:</strong><br>
-                • Index kolom yang sering muncul di WHERE, JOIN, ORDER BY<br>
-                • Jangan over-index: setiap index memperlambat INSERT/UPDATE<br>
-                • Composite index: urutkan dari yang paling selektif<br>
-                • Gunakan EXPLAIN untuk memeriksa query lambat<br>
-                • Tabel kecil (<1000 rows) tidak butuh index tambahan
-            </div>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 92%</p>
-        </section>
-
-        <!-- ==================== 9. STUDI KASUS ==================== -->
-        <section id="studi-kasus" class="card">
-            <h2><span class="icon">🎯</span> 9. Studi Kasus PPLG: Sistem Inventaris Game Store</h2>
-
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Menerapkan semua konsep dalam proyek nyata Game Store Management.
-            </div>
-
-            <h3>9.1 Deskripsi Proyek</h3>
-            <p>Buat database untuk <strong>Game Store "PixelFort"</strong> yang menjual game digital dan fisik. Sistem harus mengelola: katalog game, customer, transaksi pembelian, library game customer, dan sistem rating.</p>
-
-            <h3>9.2 Rancangan Tabel</h3>
-            <div class="table-wrapper">
-                <table>
-                    <caption>Tabel Lengkap Game Store</caption>
-                    <thead>
-                        <tr><th>Tabel</th><th>Fungsi</th><th>Relasi</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>tb_game</td><td>Katalog game (judul, genre, harga, rating)</td><td>→ tb_genre, tb_platform</td></tr>
-                        <tr><td>tb_genre</td><td>Kategori genre game</td><td>← tb_game</td></tr>
-                        <tr><td>tb_platform</td><td>Platform (PC, PS5, Xbox, Switch)</td><td>M:N dengan tb_game (butuh junction)</td></tr>
-                        <tr><td>tb_game_platform</td><td>Junction game-platform</td><td>FK ke tb_game & tb_platform</td></tr>
-                        <tr><td>tb_customer</td><td>Data pembeli</td><td>→ tb_pembelian</td></tr>
-                        <tr><td>tb_pembelian</td><td>Header transaksi</td><td>FK ke tb_customer</td></tr>
-                        <tr><td>tb_detail_pembelian</td><td>Detail game yang dibeli</td><td>FK ke tb_pembelian & tb_game</td></tr>
-                        <tr><td>tb_library</td><td>Game yang dimiliki customer</td><td>FK ke tb_customer & tb_game</td></tr>
-                        <tr><td>tb_review</td><td>Rating & review game</td><td>FK ke tb_customer & tb_game</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>9.3 Challenge untuk Kamu!</h3>
-            <div class="info-box">
-                <strong>🎮 Tugas Praktik Mandiri:</strong><br>
-                1. Buat semua tabel di atas dengan tipe data yang tepat<br>
-                2. Terapkan normalisasi 3NF<br>
-                3. Tambahkan index untuk optimasi query<br>
-                4. Buat query untuk menampilkan top 10 game terlaris<br>
-                5. Buat query untuk rekomendasi game berdasarkan genre yang sering dibeli customer<br>
-                6. Implementasikan transaksi untuk pembelian game<br>
-                7. Buat trigger untuk otomatis menambah ke library setelah pembelian sukses
-            </div>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 97%;"></div></div>
-            <p style="text-align:center; color:#64748b; font-size:0.75em;">Progress Materi: 97%</p>
-        </section>
-
-        <!-- ==================== 10. BEST PRACTICE ==================== -->
-        <section id="best-practice" class="card">
-            <h2><span class="icon">💡</span> 10. Best Practice untuk PPLG Developer</h2>
-
-            <div class="concept-box">
-                <strong>🎯 Capaian Pembelajaran:</strong> Menerapkan standar industri dalam pengembangan database.
-            </div>
-
-            <h3>10.1 Konvensi Penamaan</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr><th>Object</th><th>Convention</th><th>Contoh</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Database</td><td>db_[nama_aplikasi]</td><td>db_pixelfort, db_perpustakaan</td></tr>
-                        <tr><td>Tabel</td><td>tb_[entitas] (plural/singular)</td><td>tb_game, tb_customer</td></tr>
-                        <tr><td>Primary Key</td><td>id_[entitas]</td><td>id_game, id_customer</td></tr>
-                        <tr><td>Foreign Key</td><td>id_[entitas_referensi]</td><td>id_genre, id_customer</td></tr>
-                        <tr><td>Index</td><td>idx_[kolom] / ft_[kolom]</td><td>idx_judul, ft_deskripsi</td></tr>
-                        <tr><td>View</td><td>v_[nama_view]</td><td>v_game_terlaris</td></tr>
-                        <tr><td>Stored Procedure</td><td>sp_[nama_prosedur]</td><td>sp_beli_game</td></tr>
-                        <tr><td>Trigger</td><td>trg_[tabel]_[event]</td><td>trg_pembelian_after_insert</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>10.2 Keamanan Database</h3>
-            <div class="danger-box">
-                <strong>🔐 Checklist Keamanan:</strong><br>
-                1. ☐ Jangan pakai user 'root' untuk aplikasi. Buat user khusus dengan hak terbatas<br>
-                2. ☐ Hash password dengan bcrypt/argon2 (jangan MD5/SHA1)<br>
-                3. ☐ Gunakan prepared statement untuk cegah SQL Injection<br>
-                4. ☐ Batasi akses IP untuk database production<br>
-                5. ☐ Backup database secara berkala (cron job)<br>
-                6. ☐ Enkripsi data sensitif (KTP, kartu kredit)<br>
-                7. ☐ Log semua query yang mengubah data
-            </div>
-
-            <h3>10.3 Checklist Final</h3>
-            <ul>
-                <li>✅ Rancangan ERD sudah dibuat dan direview</li>
-                <li>✅ Semua tabel sudah 3NF</li>
-                <li>✅ Tipe data sudah optimal (DECIMAL untuk uang, VARCHAR untuk teks variabel)</li>
-                <li>✅ Primary key dan foreign key sudah sesuai</li>
-                <li>✅ Index sudah ditambahkan untuk query yang sering dipakai</li>
-                <li>✅ Engine InnoDB untuk semua tabel</li>
-                <li>✅ Collation utf8mb4_unicode_ci (support emoji & karakter internasional)</li>
-                <li>✅ Backup SQL sudah dibuat dan diuji restore-nya</li>
-                <li>✅ Dokumentasi database sudah ditulis (bisa pakai phpMyAdmin export PDF)</li>
+            <h3>16.2 Checklist Sebelum Ujian / Presentasi</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>☐ Semua tabel sudah punya PRIMARY KEY?</li>
+                <li>☐ Foreign Key sudah terpasang dengan benar?</li>
+                <li>☐ Tipe data sudah sesuai? (harga = DECIMAL, bukan FLOAT)</li>
+                <li>☐ Collation utf8mb4_general_ci?</li>
+                <li>☐ Engine InnoDB?</li>
+                <li>☐ Sudah di-backup ke file .sql?</li>
+                <li>☐ Bisa menjelaskan normalisasi 1NF, 2NF, 3NF?</li>
+                <li>☐ Bisa menjelaskan fungsi WHERE di UPDATE/DELETE?</li>
+                <li>☐ Bisa mendemonstrasikan JOIN?</li>
+                <li>☐ Bisa ekspor dan impor database?</li>
             </ul>
-
-            <div class="progress-bar"><div class="progress-fill" style="width: 100%; background: linear-gradient(90deg, #10b981, #059669);"></div></div>
-            <p style="text-align:center; color:#10b981; font-size:0.8em; font-weight:600;">🎉 Progress Materi: 100% - SELAMAT!</p>
         </section>
 
         <!-- PENUTUP -->
         <section class="card" style="text-align: center; background: linear-gradient(135deg, #ede9fe, #dbeafe); border: 2px solid #c4b5fd;">
-            <h2 style="border: none; justify-content: center; color: #5b21b6;">🚀 Kamu Siap Jadi Database Developer!</h2>
-            <p style="font-size: 0.9em;">Dengan panduan ini, kamu sudah menguasai:</p>
+            <h2 style="border: none; justify-content: center; color: #5b21b6;">🎉 Selamat! Kamu Sudah Menguasai Database!</h2>
+            <p style="font-size: 0.9em;">Dari membuat database, mengisi data, sampai relasi kompleks:</p>
             <div class="skill-badges">
                 <span class="skill-badge">✅ Konsep Database</span>
-                <span class="skill-badge">✅ Arsitektur MySQL</span>
-                <span class="skill-badge">✅ Perancangan ERD</span>
-                <span class="skill-badge">✅ Normalisasi 3NF</span>
-                <span class="skill-badge">✅ Tipe Data Optimal</span>
-                <span class="skill-badge">✅ CRUD Advanced</span>
-                <span class="skill-badge">✅ JOIN & Subquery</span>
-                <span class="skill-badge">✅ Index & Optimasi</span>
-                <span class="skill-badge">✅ Transaksi ACID</span>
+                <span class="skill-badge">✅ XAMPP & phpMyAdmin</span>
+                <span class="skill-badge">✅ Rancangan Database</span>
+                <span class="skill-badge">✅ Tipe Data</span>
+                <span class="skill-badge">✅ Normalisasi</span>
+                <span class="skill-badge">✅ CRUD (INSERT, SELECT, UPDATE, DELETE)</span>
+                <span class="skill-badge">✅ Relasi & Foreign Key</span>
+                <span class="skill-badge">✅ JOIN Table</span>
+                <span class="skill-badge">✅ Ekspor & Impor</span>
                 <span class="skill-badge">✅ Best Practice</span>
             </div>
-            <p style="margin-top: 12px; font-size: 0.85em;"><strong>Next Step:</strong> Integrasikan database ini dengan REST API (Express.js / Laravel) dan buat frontend-nya dengan React/Vue! 🎮</p>
-            <p style="font-size: 0.78em; color: #64748b;">Dokumen ini disusun sesuai Kurikulum Merdeka SMK PPLG Fase F</p>
+            <p style="margin-top: 12px;"><strong>Next Step:</strong> Integrasikan database ini dengan aplikasi PHP/Node.js dan buat tampilannya dengan HTML/CSS! 🚀</p>
         </section>
 
     </main>
 
     <footer>
-        <p>📚 Modul Basis Data SMK PPLG | Dibuat dengan ❤️ untuk Pendidikan Indonesia</p>
-        <p>Versi 5.0 • Fully Responsive • <a href="#home">Kembali ke Atas ↑</a></p>
-        <p style="margin-top: 4px; font-size: 0.72em;">Materi: Database MySQL • phpMyAdmin • Perancangan • Normalisasi • Optimasi</p>
+        <p>📚 Modul Lengkap Basis Data SMK PPLG | Dengan Penjelasan "Mengapa" di Setiap Langkah</p>
+        <p>Versi 6.0 • Dilengkapi Step-by-Step Detail • <a href="#home">Kembali ke Atas ↑</a></p>
     </footer>
 
     <script>
